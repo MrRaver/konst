@@ -1,3 +1,5 @@
+from datetime import date
+import random
 import time
 
 from selenium.webdriver.common import action_chains
@@ -35,9 +37,11 @@ class Test_Konstructor(BasePage):
     def create_table_directory(self): #Создание таблицы: справочника
         self.autorization()
         self.element_is_present(table.ADD_TABLE).click()
+        names_table="Справочник"+" ",str((random.randint(1,900)))+' ',str(self.date_today())
         Table_name = self.element_is_visible(table.TABLE_NAME)
         Table_name.click()
-        Table_name.send_keys("Справочник 1 31.03.2023")
+        Table_name.send_keys(names_table)
+        print(names_table)
         self.element_is_visible(table.ADD_ROW).click()
         self.element_is_visible(table.SECOND_ROW).click()
         names=self.element_is_visible(table.NAMES)
@@ -125,8 +129,10 @@ class Test_Konstructor(BasePage):
     def use_directory(self):#Создание таблицы, использующей справочник
         self.autorization()
         self.element_is_visible(table.ADD_TABLE).click()
-        table_name=self.element_is_visible(table.TABLE_NAME)
-        table_name.send_keys("Таблица 1 31.03.2023")
+        names_table = "Таблица 1 " + " ", str((random.randint(1, 900))) + ' ', str(self.date_today())
+        print(names_table)
+        Names=self.element_is_visible(table.TABLE_NAME)
+        Names.send_keys(names_table)
         self.element_is_visible(table.ADD_ROW).click()
         self.element_is_visible(table.SECOND_ROW).click()
         names = self.element_is_visible(table.NAMES)
@@ -313,8 +319,10 @@ class Test_Konstructor(BasePage):
     def multiple_table(self):  # 15.Создание таблицы, использующей справочник с множественным выбором
         self.autorization()
         self.element_is_visible(table.ADD_TABLE).click()
+        names_table = "Таблица 3" + " ", str((random.randint(1, 900))) + ' ', str(self.date_today())
+        print(names_table)
         table_name = self.element_is_visible(table.TABLE_NAME)
-        table_name.send_keys("Таблица 3 02.04.2023")
+        table_name.send_keys(names_table)
         self.element_is_visible(table.ADD_ROW).click()
         self.element_is_visible(table.SECOND_ROW).click()
         names = self.element_is_visible(table.NAMES)
@@ -696,9 +704,11 @@ class Table_in_table(BasePage):
     def table_order(self):#создание таблицы заказ
         self.autorization()
         self.element_is_present(table.ADD_TABLE).click()
+        names_table = "Заказ" + " ", str((random.randint(1, 900))) + ' ', str(self.date_today())
+        print(names_table)
         Table_name = self.element_is_visible(table.TABLE_NAME)
         Table_name.click()
-        Table_name.send_keys("Заказ 01.04.2023")
+        Table_name.send_keys(names_table)
         self.element_is_visible(table.ADD_ROW).click()
         self.element_is_visible(table.SECOND_ROW).click()
         names = self.element_is_visible(table.NAMES)
@@ -710,7 +720,7 @@ class Table_in_table(BasePage):
         self.element_is_visible(table.SAVE).click()
 
     def create_position_order(self):#создание позиции в заказе
-       # self.autorization()
+        self.autorization()
         self.element_is_visible(table.KONSTRUCTOR).click()
         self.element_is_present(table.ADD_TABLE).click()
         Table_name = self.element_is_visible(table.TABLE_NAME)
@@ -771,6 +781,7 @@ class Test_dependent_directory(BasePage):
     def create_table_type(self):
          self.autorization()
          self.element_is_visible(table.ADD_TABLE).click()
+
          Table_name = self.element_is_visible(table.TABLE_NAME)
          Table_name.click()
          Table_name.send_keys("тип данных 01.04.2023")
@@ -783,7 +794,7 @@ class Test_dependent_directory(BasePage):
          self.element_is_visible(table.SAVE).click()
 
     def create_table_data(self):
-        #self.autorization()
+        self.autorization()
         self.element_is_visible(table.KONSTRUCTOR).click()
         self.element_is_visible(table.ADD_TABLE).click()
         Table_name = self.element_is_visible(table.TABLE_NAME)
@@ -819,11 +830,12 @@ class Test_dependent_directory(BasePage):
         self.element_is_visible(table.SAVE).click()
     def create_table_addiction(self):
         self.autorization()
-        #self.element_is_visible(table.KONSTRUCTOR).click()
         self.element_is_visible(table.ADD_TABLE).click()
+        names_table = "Зависимость" + " ", str((random.randint(1, 900))) + ' ', str(self.date_today())
+        print(names_table)
         Table_name = self.element_is_visible(table.TABLE_NAME)
         Table_name.click()
-        Table_name.send_keys("зависимость 01.04.2023")
+        Table_name.send_keys(names_table)
         self.element_is_visible(table.ADD_ROW).click()
         self.element_is_visible(table.SECOND_ROW).click()
         names = self.element_is_visible(table.NAMES)

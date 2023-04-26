@@ -27,7 +27,7 @@ class TestKonstructors:
         cons = Test_Konstructor(driver, "http://193.124.117.158/#/login")
         cons.open()
         cons.use_directory()
-        time.sleep(20)
+        time.sleep(3)
 
 
 
@@ -55,7 +55,7 @@ class TestKonstructors:
         cons = Test_Konstructor(driver, "http://193.124.117.158/#/login")
         cons.open()
         cons.multiple_table()
-        time.sleep(20)
+        time.sleep(3)
     def test_transition_between_tables(self,driver):#16.Создание перехода в другую таблицу
         cons = Test_Konstructor(driver, "http://193.124.117.158/#/login")
         cons.open()

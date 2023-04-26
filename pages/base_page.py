@@ -1,3 +1,5 @@
+from datetime import date
+
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait as Wait
@@ -12,6 +14,9 @@ class BasePage:
     def open(self):
         self.driver.get(self.url)
 
+    def date_today(self):
+        current_date=date.today()
+        return current_date
 
     def element_is_visible(self,locator,timeout=5):
         return Wait(self.driver,timeout).until(EC.visibility_of_element_located(locator))
