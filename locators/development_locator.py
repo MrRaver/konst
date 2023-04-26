@@ -12,12 +12,14 @@ class Reports:
     REPORTS_FIRST=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/table[2]/tbody/tr/td[1]/a") #Первыйотчет
 
 class CLIENTPROGRAMMING:
+    IFRAME = (By.XPATH, "/html/body/div/div/div[3]/div/div/div[2]/div/div/next-gen/iframe")  # iframe
     DEVELOPMENT = (By.XPATH, "/html/body/div/div/div[2]/ul/li[8]/a")  # Разработка
     ADD_DHTML=(By.XPATH,"/html/body/div[1]/div/div[2]/div/div[2]/div/div/div/div[1]/table/thead/tr[1]/th[1]/div[1]/button") #Добавить DHTML
     ADD_DHTML2=(By.CLASS_NAME,"pi pi-plus-circle p-button-icon") #Добавить DHTML
     NAMES_DHTML=(By.XPATH,"/html/body/div[3]/div/div[2]/div/div[1]/div/div/div[1]/div[2]/input") #имя DHTML
     HTML=(By.XPATH,"/html/body/div[3]/div/div[2]/div/div[1]/div/div/div[2]/div/div[1]/div/ul/li[2]") #HTML
-    INPUT_DATA=(By.XPATH,"/html/body/div[3]/div/div[2]/div/div[1]/div/div/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div[2]/div[1]/div[5]") # Ввод HTML
+    INPUT_DHTML=(By.XPATH,"/html/body/div[3]/div/div[2]/div/div[1]/div/div/div[2]/div/div[2]/div/div/div[2]/div/div[1]/textarea") # Ввод DHTML-блоки
+    INPUT_ACTION=(By.XPATH,"/html/body/div[3]/div/div[2]/div/div[1]/div/div/div[2]/div/div[2]/div/div[1]/textarea") # Ввод действия над строками
     JS=(By.XPATH,"/html/body/div[3]/div/div[2]/div/div[1]/div/div/div[2]/div/div[1]/div/ul/li[3]") #JS
     ROUTE=(By.XPATH,"/html/body/div[3]/div/div[2]/div/div[1]/div/div/div[2]/div/div[1]/div/ul/li[4]") #маршрутор
     ADD_ROUTE=(By.XPATH,"/html/body/div[3]/div/div[2]/div/div[1]/div/div/div[2]/div/div[2]/div/div/div[1]/button/span[1]") #Добавить маршрут
@@ -36,6 +38,10 @@ class CLIENTPROGRAMMING:
     NAMES_ACTION=(By.XPATH,"/html/body/div[3]/div/div[2]/div/div[1]/div/div/div[1]/div[2]/input") #имя действий над строками
     BUTTON_NAMES_ACTION=(By.XPATH,"/html/body/div[3]/div/div[2]/div/div[1]/div/div/div[1]/div[4]/input") #имя кнопки действий над строками
     CHECKBOX_SHOW_GRID=(By.XPATH,"/html/body/div[3]/div/div[2]/div/div[1]/div/div/div[1]/div[6]/div/div[2]") #чекбокс показать грид
+    SAVE_ACTIONS_STROKE=(By.XPATH,"/html/body/div[3]/div/div[2]/div/div[2]/button[1]")
+    EDIT_ACTIONS_FIRST=(By.XPATH,"/html/body/div[1]/div/div[2]/div/div[2]/div/div/div/div[1]/table/tbody/tr/td[1]/div/button[1]")
+
+
 
 
 

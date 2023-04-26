@@ -1,5 +1,6 @@
 import time
-from random import random
+import random
+from datetime import date
 
 from pages.base_page import BasePage
 from locators.development_locator import Reports as dev
@@ -10,16 +11,15 @@ class Test_Development(BasePage):
     def create_DHTML(self):  # 1.Создание DHTML страниц
         self.autorization()
         self.element_is_visible(clpro.DEVELOPMENT).click()
-        time.sleep(10)
-        self.driver.refresh()
+        self.driver.switch_to.frame(self.element_is_visible(clpro.IFRAME))
         self.element_is_present(clpro.ADD_DHTML).click()
         names = "Тестовая таблица " + " ", str((random.randint(1, 900))) + ' ', str(self.date_today())
         print(names)
         self.element_is_visible(clpro.NAMES_DHTML).send_keys(names)
         self.element_is_visible(clpro.HTML).click()
-        self.element_is_visible(clpro.INPUT_DATA).send_keys('<div class="page-header"><h3> Список пользователей </h3></div><div class="panel"><div class="form-inline"><div class="form-group"><div class="col-md-6"><input class="form-control" ng-model="fio" placegolder="ФИО"/></div></div> <div class="form-group"><div class="col-md-6"><input class="form-control" ng-model="department" placegolder="Отдел"/></div></div><div class="form-group"><div class="col-md-offset-2-col-md-8"><button class="form-control" ng-click="additem(fio,department)">Добавить</button> </div></div><table class="table table-striped"><thread><tr><th> ФИО </th><th> Отдел </th></tr></thread><tbody><tr ng-repeat="item in list.items"><td> {{item.fio}} </td><td> {{item.department}} </td></tr></tbody></table></div>')
+        self.element_is_visible(clpro.INPUT_DHTML).send_keys('<div class="page-header"><h3> Список пользователей </h3></div><div class="panel"><div class="form-inline"><div class="form-group"><div class="col-md-6"><input class="form-control" ng-model="fio" placegolder="ФИО"/></div></div> <div class="form-group"><div class="col-md-6"><input class="form-control" ng-model="department" placegolder="Отдел"/></div></div><div class="form-group"><div class="col-md-offset-2-col-md-8"><button class="form-control" ng-click="additem(fio,department)">Добавить</button> </div></div><table class="table table-striped"><thread><tr><th> ФИО </th><th> Отдел </th></tr></thread><tbody><tr ng-repeat="item in list.items"><td> {{item.fio}} </td><td> {{item.department}} </td></tr></tbody></table></div>')
         self.element_is_visible(clpro.JS).click()
-        self.element_is_visible(clpro.INPUT_DATA).send_keys('reportsystemModule.controller["userEditorCtrl",["$scope","$state","$stateParams",function($scope,$state,$stateParams)val model={items:[{fio:"Иванов И.И",department:"Отдел продаж"},{fio:"Петров П.П",department:"Отдел продаж"},{fio:"Иванова ",department:"Бугалтерия"}, ]};$scope.list=model;$scope.additem=function(fioAdded,departmentAdded){ $scope.list.items.push {{      fio:fioAdded}department:departmentAdded });}}}};')
+        self.element_is_visible(clpro.INPUT_DHTML).send_keys('reportsystemModule.controller["userEditorCtrl",["$scope","$state","$stateParams",function($scope,$state,$stateParams)val model={items:[{fio:"Иванов И.И",department:"Отдел продаж"},{fio:"Петров П.П",department:"Отдел продаж"},{fio:"Иванова ",department:"Бугалтерия"}, ]};$scope.list=model;$scope.additem=function(fioAdded,departmentAdded){ $scope.list.items.push {{      fio:fioAdded}department:departmentAdded });}}}};')
         self.element_is_visible(clpro.ROUTE).click()
         self.element_is_visible(clpro.ADD_ROUTE).click()
         self.element_is_visible(clpro.STATE_INPUT).send_keys("main.testDHTML")
@@ -29,13 +29,15 @@ class Test_Development(BasePage):
         self.element_is_visible(clpro.SAVE_DHTML).click()
         self.element_is_visible(clpro.CLOSE).click()
 
+
     def edit_DHTML(self):  # 2.Создание DHTML страниц
         self.autorization()
         self.element_is_visible(clpro.DEVELOPMENT).click()
+        self.driver.switch_to.frame(self.element_is_visible(clpro.IFRAME))
         self.element_is_visible(clpro.EDIT).click()
         self.element_is_visible(clpro.HTML).click()
         self.element_is_visible(clpro.HTML).click()
-        html=self.element_is_visible(clpro.INPUT_DATA)
+        html=self.element_is_visible(clpro.INPUT_DHTML)
         html.clear()
         html.send_keys('<div class="page-header"><h3> Список cотрудников </h3></div><div class="panel"><div class="form-inline"><div class="form-group"><div class="col-md-6"><input class="form-control" ng-model="fio" placegolder="ФИО"/></div></div> <div class="form-group"><div class="col-md-6"><input class="form-control" ng-model="department" placegolder="Отдел"/></div></div><div class="form-group"><div class="col-md-offset-2-col-md-8"><button class="form-control" ng-click="additem(fio,department)">Добавить</button> </div></div><table class="table table-striped"><thread><tr><th> ФИО </th><th> Отдел </th></tr></thread><tbody><tr ng-repeat="item in list.items"><td> {{item.fio}} </td><td> {{item.department}} </td></tr></tbody></table></div>')
         self.element_is_visible(clpro.SAVE_DHTML).click()
@@ -45,22 +47,33 @@ class Test_Development(BasePage):
     def delete_DHTML(self):  # 3 Удаление DHTML страниц
         self.autorization()
         self.element_is_visible(clpro.DEVELOPMENT).click()
+        self.driver.switch_to.frame(self.element_is_visible(clpro.IFRAME))
         self.element_is_visible(clpro.DELETE).click()
         self.element_is_visible(clpro.YES_DELETE).click()
 
     def create_actions_string(self):  # 4 Действия над строками
         self.autorization()
         self.element_is_visible(clpro.DEVELOPMENT).click()
+        self.driver.switch_to.frame(self.element_is_visible(clpro.IFRAME))
         self.element_is_visible(clpro.ACTIONS_STRING).click()
-        self.element_is_visible(clpro.ADD_ACTIONS_STRING).click()
         self.element_is_visible(clpro.ADD_ACTIONS_STRING).click()
         names = "Тестовое действие  " + " ", str((random.randint(1, 900))) + ' ', str(self.date_today())
         print(names)
         self.element_is_visible(clpro.NAMES_ACTION).send_keys(names)
-
-
-
-
+        self.element_is_visible(clpro.BUTTON_NAMES_ACTION).send_keys("TestAction")
+        self.element_is_visible(clpro.CHECKBOX_SHOW_GRID).click()
+        self.element_is_visible(clpro.INPUT_ACTION).send_keys("alert('hello world'); ")
+        self.element_is_visible(clpro.SAVE_ACTIONS_STROKE).click()
+    def edit_actions_string(self):  # 6 Редактировнаие действия над строками
+        self.autorization()
+        self.element_is_visible(clpro.DEVELOPMENT).click()
+        self.driver.switch_to.frame(self.element_is_visible(clpro.IFRAME))
+        self.element_is_visible(clpro.ACTIONS_STRING).click()
+        self.element_is_visible(clpro.EDIT_ACTIONS_FIRST).click()
+        html = self.element_is_visible(clpro.INPUT_ACTION)
+        html.clear()
+        html.send_keys("alert('bye bye'); ")
+        self.element_is_visible(clpro.SAVE_ACTIONS_STROKE).click()
 
 
     def table_reports(self):
