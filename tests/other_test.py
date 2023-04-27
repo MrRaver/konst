@@ -8,17 +8,15 @@ class TestOther(BaseTest):
         othe=Others(driver, self.main_url()+self.login_url())
         othe.open()
         othe.catalog_data()
-        time.sleep(3)
 
     def test_message(self, driver): #Отправка уведомлений
         othe = Others(driver, self.main_url()+self.login_url())
         othe.open()
         othe.message()
-        time.sleep(3)
+
 
     def test_import_data(self, driver):  # импорт данных
         othe = Others(driver, self.main_url()+self.login_url())
         othe.open()
         res=othe.import_dat()
         print(res)
-        time.sleep(3)

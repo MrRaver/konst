@@ -50,7 +50,8 @@ class CLIENTPROGRAMMING:
     NAMES_JS_TRIGGER=(By.XPATH,"/html/body/div[3]/div/div[2]/div/div[1]/div/div/div[1]/div[2]/input") # имя  JS  trigger
     STATE_JS_TRIGGER=(By.XPATH,"/html/body/div[3]/div/div[2]/div/div[1]/div/div/div[1]/div[4]/input") # state  JS  trigger
     CODE_JS_TRIGGER=(By.XPATH,"//html/body/div[3]/div/div[2]/div/div[1]/div/div/div[2]/div/div[2]/div/div[1]/textarea") # код  JS  trigger
-    SAVE_JS_TRIGGER=(By.XPATH,"//html/body/div[3]/div/div[2]/div/div[1]/div/div/div[2]/div/div[2]/div/div[1]/textarea") # сохранить  JS  trigger
+    SAVE_JS_TRIGGER=(By.XPATH,"/html/body/div[3]/div/div[2]/div/div[2]/button[1]") # сохранить  JS  trigger
+
 
 
 

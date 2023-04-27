@@ -92,7 +92,6 @@ class Test_Konstructors_Condition(BasePage):
         self.element_is_present(table.MANY_CHOICE).click()
         self.element_is_visible(table.SAVE).click()
     def konstructor_condition_save(self):  #2.Конструктор условий. Сохранение
-        self.autorization()
         self.element_is_visible(condsave.TEST1_EDITS).click()
         names = self.RandomName("Тест сохранения")
         print(names)
@@ -168,7 +167,6 @@ class Test_Konstructors_Condition(BasePage):
         self.element_is_visible(condsave.SAVE).click()
 
     def konstructor_condition_edit(self):  #3.Конструктор условий. Редактирование
-        self.autorization()
         self.element_is_visible(condedit.TEST1_EDITS).click()
         self.element_is_visible(condedit.KONSTRUCTOR_CONDITION).click()
         self.element_is_visible(condedit.EDITS_CONDITION).click()
@@ -221,7 +219,6 @@ class Test_Konstructors_Condition(BasePage):
         self.element_is_visible(condedit.SAVE).click()
 
     def konstructor_condition_status(self):  #4.Конструктор условий. Перевод в статусы
-        self.autorization()
         self.element_is_visible(condstatus.TEST1_EDITS).click()
         self.element_is_visible(condstatus.KONSTRUCTOR_CONDITION).click()
         self.element_is_visible(condstatus.TRANSLITION_STATUS).click()
@@ -278,7 +275,6 @@ class Test_Konstructors_Condition(BasePage):
         self.element_is_visible(condstatus.SAVE).click()
 
     def konstructor_condition_filter_directory(self):   #5.Конструктор условий. Фильтрация в качестве справочника
-        self.autorization()
         self.element_is_visible(condfildic.EDITS_TABLE_PNPPK).click()
         self.element_is_visible(condfildic.KONSTRUCTOR_CONDITION).click()
         self.element_is_visible(condfildic.FILTERS_DIRECTORY).click()
@@ -306,7 +302,6 @@ class Test_Konstructors_Condition(BasePage):
         self.element_is_visible(condfildic.SAVE).click()
 
     def konstructor_condition_filter(self):  # 6.Конструктор условий. Фильтрация
-        self.autorization()
         self.element_is_visible(condfil.TEST1_EDITS).click()
         self.element_is_visible(condfil.KONSTRUCTOR_CONDITION).click()
         self.element_is_visible(condfil.FILTERS).click()
@@ -358,10 +353,7 @@ class Test_Konstructors_Condition(BasePage):
         third_row5.send_keys(Keys.ENTER)
         self.element_is_visible(condfil.SAVE_CONDITION).click()
         self.element_is_visible(condfil.SAVE).click()
-
-
     def konstructor_condition_edits_predict(self):  # 8.Конструктор условий. Изменение предикатов
-        self.autorization()
         self.element_is_visible(condedpr.TEST1_EDITS).click()
         self.element_is_visible(condedpr.KONSTRUCTOR_CONDITION).click()
         self.element_is_visible(condedpr.EDITS_SAVE).click()

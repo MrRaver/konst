@@ -12,9 +12,7 @@ from locators.development_locator import CLIENTPROGRAMMING as clpro
 class Test_Development(BasePage):
 
     def create_DHTML(self):  # 1.Создание DHTML страниц
-        self.autorization()
-        self.element_is_visible(clpro.DEVELOPMENT).click()
-        self.driver.switch_to.frame(self.element_is_visible(clpro.IFRAME))
+        self.Iframe()
         self.element_is_present(clpro.ADD_DHTML).click()
         names = self.RandomName("Тестовая страница")
         print(names)
@@ -35,9 +33,7 @@ class Test_Development(BasePage):
         self.element_is_visible(clpro.CLOSE).click()
 
     def edit_DHTML(self):  # 2.Редактирование DHTML страниц
-        self.autorization()
-        self.element_is_visible(clpro.DEVELOPMENT).click()
-        self.driver.switch_to.frame(self.element_is_visible(clpro.IFRAME))
+        self.Iframe()
         self.element_is_visible(clpro.EDIT).click()
         self.element_is_visible(clpro.HTML).click()
         self.element_is_visible(clpro.HTML).click()
@@ -49,16 +45,12 @@ class Test_Development(BasePage):
         self.element_is_visible(clpro.CLOSE).click()
 
     def delete_DHTML(self):  # 3 Удаление DHTML страниц
-        self.autorization()
-        self.element_is_visible(clpro.DEVELOPMENT).click()
-        self.driver.switch_to.frame(self.element_is_visible(clpro.IFRAME))
+        self.Iframe()
         self.element_is_visible(clpro.DELETE).click()
         self.element_is_visible(clpro.YES_DELETE).click()
 
     def create_actions_string(self):  # 4 Действия над строками
-        self.autorization()
-        self.element_is_visible(clpro.DEVELOPMENT).click()
-        self.driver.switch_to.frame(self.element_is_visible(clpro.IFRAME))
+        self.Iframe()
         self.element_is_visible(clpro.ACTIONS_STRING).click()
         self.element_is_visible(clpro.ADD_ACTIONS_STRING).click()
         names = self.RandomName("Тестовая действие")
@@ -70,9 +62,7 @@ class Test_Development(BasePage):
         self.element_is_visible(clpro.SAVE).click()
 
     def create_right_on_string(self):  # 5.Создание команд над строками
-        self.autorization()
-        self.element_is_visible(clpro.DEVELOPMENT).click()
-        self.driver.switch_to.frame(self.element_is_visible(clpro.IFRAME))
+        self.Iframe()
         self.element_is_visible(clpro.RIGHT_ON_STRING).click()
         self.element_is_visible(clpro.ROLE).click()
         self.element_is_visible(clpro.INPUT_ROLE).send_keys("admin")
@@ -82,9 +72,7 @@ class Test_Development(BasePage):
         self.element_is_visible(clpro.FIRST_ACTION_VARIANT).click()
 
     def edit_actions_string(self):  # 6 Редактировнаие действия над строками
-        self.autorization()
-        self.element_is_visible(clpro.DEVELOPMENT).click()
-        self.driver.switch_to.frame(self.element_is_visible(clpro.IFRAME))
+        self.Iframe()
         self.element_is_visible(clpro.ACTIONS_STRING).click()
         self.element_is_visible(clpro.EDIT).click()
         html = self.element_is_visible(clpro.INPUT_ACTION)
@@ -94,15 +82,28 @@ class Test_Development(BasePage):
         self.element_is_visible(clpro.SAVE).click()
 
     def delete_actions_string(self):  # 7 удаление действия над строками
-        self.autorization()
-        self.element_is_visible(clpro.DEVELOPMENT).click()
-        self.driver.switch_to.frame(self.element_is_visible(clpro.IFRAME))
+        self.Iframe()
         self.element_is_visible(clpro.ACTIONS_STRING).click()
         self.element_is_visible(clpro.DELETE).click()
         self.element_is_visible(clpro.YES_DELETE).click()
+    def create_js_trigger(self):  # 8 создание js тригера
+        self.Iframe()
+        self.element_is_visible(clpro.JS_TRIGGER).click()
+        self.element_is_visible(clpro.ADD_JS_TRIGGER).click()
+        names = self.RandomName("Тестовый триггер")
+        print(names)
+        self.element_is_visible(clpro.NAMES_JS_TRIGGER).send_keys(names)
+        self.element_is_visible(clpro.STATE_JS_TRIGGER).send_keys("main")
+        self.element_is_visible(clpro.CODE_JS_TRIGGER).send_keys("alert('Что-то произошло в клиентском триггере');")
+        self.element_is_visible(clpro.SAVE).click()
+
+
 
     def table_reports(self):
-        self.autorization()
         self.element_is_visible(dev.DEVELOPMENT).click()
         self.element_is_visible(dev.REPORTS).click()
         self.element_is_visible(dev.REPORTS_FIRST).click()
+
+    def Iframe(self):
+        self.element_is_visible(clpro.DEVELOPMENT).click()
+        self.driver.switch_to.frame(self.element_is_visible(clpro.IFRAME))

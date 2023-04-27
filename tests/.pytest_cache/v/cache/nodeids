@@ -1,6 +1,7 @@
 [
   "development_test.py::TestDevelopment::test_create_DHTML",
   "development_test.py::TestDevelopment::test_create_actions_string",
+  "development_test.py::TestDevelopment::test_create_js_trigger",
   "development_test.py::TestDevelopment::test_create_right_on_string",
   "development_test.py::TestDevelopment::test_delete_DHTML",
   "development_test.py::TestDevelopment::test_delete_actions_string",

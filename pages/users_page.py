@@ -8,9 +8,7 @@ from selenium.webdriver import Keys
 
 class User(BasePage):
     def create_role_GR1_GR2(self): #1 Создание роли
-        self.autorization()
-        self.element_is_visible(user.ROLES).click()
-        self.element_is_visible(user.ADD_ROLE).click()
+        self.add_role()
         names_role = self.RandomName("Тестовая роль GR1")
         print(names_role)
         names=self.element_is_visible(user.ROLES_NAME)
@@ -18,8 +16,7 @@ class User(BasePage):
         names.clear()
         names.send_keys(names_role)
         self.element_is_visible(user.SAVE_ROLE).click()
-        self.element_is_visible(user.ROLES).click()
-        self.element_is_visible(user.ADD_ROLE).click()
+        self.add_role()
         names = self.element_is_visible(user.ROLES_NAME)
         names.click()
         names.clear()
@@ -29,9 +26,7 @@ class User(BasePage):
         self.element_is_visible(user.SAVE_ROLE).click()
 
     def create_user_GR1_GR2(self):  # 2.Создание пользователя
-        self.autorization()
-        self.element_is_visible(user.USERS).click()
-        self.element_is_visible(user.ADD_USERS).click()
+        self.add_users()
         names_role = self.RandomName("Тестовая роль GR")
         print(names_role)
         self.element_is_visible(user.LOGIN_USER).send_keys(names_role)
@@ -42,7 +37,7 @@ class User(BasePage):
         self.element_is_visible(user.PASSWORD_USER).send_keys("12345")
         self.element_is_visible(user.PASSWORD_USER2).send_keys("12345")
         self.element_is_visible(user.SAVE_USERS).click()
-        self.element_is_visible(user.ADD_USERS).click()
+        self.add_users()
         names_role2 = self.RandomName("Тестовая роль GR TWO")
         print(names_role2)
         self.element_is_visible(user.LOGIN_USER).send_keys(names_role2)
@@ -56,9 +51,7 @@ class User(BasePage):
 
 
     def reg_by_email(self): #3 Регистрация пользователя по почте
-        self.autorization()
-        self.element_is_visible(user.USERS).click()
-        self.element_is_visible(user.ADD_USERS).click()
+        self.add_users()
         self.element_is_visible(user.REGISTRATION_EMAIL).click()
         self.element_is_visible(user.ADD_EMAIL_USERS).click()
         self.element_is_visible(user.EMAIL_BY_REGISTRATION).send_keys("test@test.ru")
@@ -68,9 +61,7 @@ class User(BasePage):
         self.element_is_visible(user.SAVE_EMAIL).click()
 
     def reg_by_url(self):  # 4.Регистрация пользователя по ссылке
-        self.autorization()
-        self.element_is_visible(user.USERS).click()
-        self.element_is_visible(user.ADD_USERS).click()
+        self.add_users()
         self.element_is_visible(user.REGISTRATION_BY_URL).click()
         self.element_is_visible(user.ADD_LINK_URL).click()
         self.element_is_visible(user.CHOICE_URL).click()
@@ -89,7 +80,6 @@ class User(BasePage):
         self.element_is_visible(user.SAVE_INUSERS).click()
 
     def off_users(self):  # 6.Отключение пользователя
-        self.autorization()
         self.element_is_visible(user.USERS).click()
         self.element_is_visible(user.OFF_URL).click()
         alert = self.driver.switch_to.alert
@@ -100,9 +90,7 @@ class User(BasePage):
         return self.element_is_visible(user.TEXT_ERROR).text
 
     def GR12_password_test(self):  #7.Пользователи (Несовпадающие пароли)
-        self.autorization()
-        self.element_is_visible(user.USERS).click()
-        self.element_is_visible(user.ADD_USERS).click()
+        self.add_users()
         self.element_is_visible(user.LOGIN_USER).send_keys("Тестовая роль GR12")
         self.element_is_visible(user.EMAIL_USER).send_keys("testgr@test.ru")
         self.element_is_visible(user.LASTNAME_USER).send_keys("test")
@@ -112,9 +100,7 @@ class User(BasePage):
         self.element_is_visible(user.PASSWORD_USER2).send_keys("123456")
         return self.element_is_visible(user.PASSWORD_NOT_MATHES).text
     def GR12_name_test(self):  #8.Пользователи (Отсутствует Имя пользователя)
-        self.autorization()
-        self.element_is_visible(user.USERS).click()
-        self.element_is_visible(user.ADD_USERS).click()
+        self.add_users()
         self.element_is_visible(user.LOGIN_USER).send_keys("Тестовая роль GR12")
         self.element_is_visible(user.EMAIL_USER).send_keys("testgr@test.ru")
         self.element_is_visible(user.LASTNAME_USER).send_keys("test")
@@ -126,9 +112,7 @@ class User(BasePage):
 
 
     def add_role_GR1(self): #11 Добавление роли в таблицу
-        self.autorization()
-        self.element_is_visible(user.EDIT_ADDITIONAL).click()
-        self.element_is_visible(user.THE_RIGHT).click()
+        self.rigth()
         self.element_is_visible(user.ADD_THE_RIGHT).click()
         self.element_is_visible(user.NAMES_ROLE).click()
         self.element_is_visible(user.NAMES_ROLE_ENTER).click()
@@ -148,17 +132,13 @@ class User(BasePage):
         self.element_is_present(user.TRANSLITION_ALL_STATUS).click()
         self.element_is_visible(user.SAVE).click()
     def delete_role_GR1(self): #12.Удаление роли в таблице
-        self.autorization()
-        self.element_is_visible(user.EDIT_ADDITIONAL).click()
-        self.element_is_visible(user.THE_RIGHT).click()
+        self.rigth()
         self.element_is_visible(user.DELETE_GR1).click()
         self.element_is_visible(user.OKAY).click()
         self.element_is_visible(user.SAVE).click()
 
     def tree_status(self):  # 13.Дерево статусов
-        self.autorization()
-        self.element_is_visible(user.EDIT_ADDITIONAL).click()
-        self.element_is_visible(user.THE_RIGHT).click()
+        self.rigth()
         self.element_is_visible(user.BUSINESS_PROCESS).click()
         self.element_is_present(user.TRANSLITION_ALL_STATUS).click()
         self.element_is_present(user.SETTING_STATUS).click()
@@ -168,7 +148,6 @@ class User(BasePage):
         self.element_is_visible(user.TREE_STATUS).click()
 
     def role2_inheritance(self):  # 14.Наследование
-        self.autorization()
         self.element_is_visible(user.EDIT_ORDER).click()
         self.element_is_visible(user.THE_RIGHT).click()
         self.element_is_visible(user.ADD_THE_RIGHT).click()
@@ -202,9 +181,7 @@ class User(BasePage):
         self.element_is_visible(user.TEST_SCHEMA).click()
 
     def give_rigth(self):  # 1. Выдача прав пользователям
-        self.autorization()
-        self.element_is_visible(user.EDIT_ADDITIONAL).click()
-        self.element_is_visible(user.THE_RIGHT).click()
+        self.rigth()
         self.element_is_visible(user.ADD_THE_RIGHT).click()
         self.element_is_visible(user.NAMES_ROLE).click()
         self.element_is_visible(user.NAMES_ROLE_ENTER).click()
@@ -245,9 +222,7 @@ class User(BasePage):
         self.element_is_visible(user.SAVE).click()
 
     def off_visible(self):  # 2. Скрытие столбцов через права
-        self.autorization()
-        self.element_is_visible(user.EDIT_ADDITIONAL).click()
-        self.element_is_visible(user.THE_RIGHT).click()
+        self.rigth()
         self.element_is_visible(user.SEES).click()
         self.element_is_visible(user.ALL_FIELDS).click()
         self.element_is_visible(user.FIND_ELEMENT).click()
@@ -258,9 +233,7 @@ class User(BasePage):
         self.element_is_visible(user.SAVE).click()
 
     def delete_right(self):  # 3. Удаление прав
-        self.autorization()
-        self.element_is_visible(user.EDIT_ADDITIONAL).click()
-        self.element_is_visible(user.THE_RIGHT).click()
+        self.rigth()
         self.element_is_visible(user.EDITS).click()
         self.element_is_visible(user.ADD_FIELD).click()
         self.element_is_visible(user.EDITS_EDIT).click()
@@ -271,6 +244,16 @@ class User(BasePage):
         self.element_is_visible(user.CONFIRM).click()
         self.element_is_visible(user.SAVE_EDIT).click()
         self.element_is_visible(user.SAVE).click()
+    def add_users(self):
+        self.element_is_visible(user.USERS).click()
+        self.element_is_visible(user.ADD_USERS).click()
+    def rigth(self):
+        self.element_is_visible(user.EDIT_ADDITIONAL).click()
+        self.element_is_visible(user.THE_RIGHT).click()
+
+    def add_role(self):
+        self.element_is_visible(user.ROLES).click()
+        self.element_is_visible(user.ADD_ROLE).click()
 
 
 

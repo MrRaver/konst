@@ -51,86 +51,72 @@ class TestKonstructors(BaseTest):
         cons.create_table_type()
         cons.create_table_data()
         cons.create_table_addiction()
-        time.sleep(3)
+
     def test_multiple_choice(self,driver):#15.Создание таблицы, использующей справочник с множественным выбором
         cons = Test_Konstructor(driver, self.main_url()+self.login_url())
         cons.open()
         cons.multiple_table()
-        time.sleep(3)
     def test_transition_between_tables(self,driver):#16.Создание перехода в другую таблицу
         cons = Test_Konstructor(driver, self.main_url()+self.login_url())
         cons.open()
         cons.between_tables()
-        time.sleep(3)
 
     def test_add_form_edit(self,driver):#17.Создание разрешения добавления в форме редактирования для справочника
         cons = Test_Konstructor(driver, self.main_url()+self.login_url())
         cons.open()
         cons.add_editForm()
-        time.sleep(3)
 
     def test_delete_table(self,driver):  #  20.Создание разрешения добавления в форме редактирования для справочника
         cons = Test_Konstructor(driver, self.main_url()+self.login_url())
         cons.open()
         data=cons.delete_table()
         print(data)
-        time.sleep(3)
     def test_edit_table_name(self,driver): #21.Редактирование Alias и названий таблиц
         cons = Test_Konstructor(driver, self.main_url()+self.login_url())
         cons.open()
         cons.edit_table_name()
-        time.sleep(3)
     def test_matches_rows(self,driver): #22.Смена местами Alias и названий нескольких столбцов
         cons = Test_Konstructor(driver, self.main_url()+self.login_url())
         cons.open()
         data=cons.matches_row()
         print(data)
-        time.sleep(3)
     def test_moving_rows(self,driver): #23.Перемещение столбцов
         cons = Test_Konstructor(driver, self.main_url()+self.login_url())
         cons.open()
         cons.moving_rows()
-        time.sleep(4)
     def test_fix_number(self,driver): #24.Закрепление столбца
         cons = Test_Konstructor(driver, self.main_url()+self.login_url())
         cons.open()
         cons.fix_number()
-        time.sleep(4)
     def test_status_checkbox(self,driver): #25.Отключение статусов
         cons = Test_Konstructor(driver, self.main_url()+self.login_url())
         cons.open()
         cons.test_status()
-        time.sleep(4)
 
     def test_change_dimesnion(self,driver):  # 26.Изменение ширины ячейки в форме редактирования
         cons = Test_Konstructor(driver, self.main_url()+self.login_url())
         cons.open()
         cons.change_dimesnion()
-        time.sleep(4)
 
     def test_change_sample(self,driver):  # 27.Изменение шаблона ячейки
         cons = Test_Konstructor(driver, self.main_url()+self.login_url())
         cons.open()
         cons.change_sample()
-        time.sleep(3)
 
     def test_edit_rows(self,driver):  # 28.Возможность редактирования в строке
         cons = Test_Konstructor(driver, self.main_url()+self.login_url())
         cons.open()
         cons.chance_edit_rows()
-        time.sleep(3)
 
     def test_add_unique_row(self,driver):  # 30.Создание уникального и обязательного для заполнения поля
         cons = Test_Konstructor(driver, self.main_url()+self.login_url())
         cons.open()
         cons.add_unique_row()
-        time.sleep(3)
 
     def test_off_unique_checkbox(self,driver):  # 31.Создание уникального и обязательного для заполнения поля
         cons = Test_Konstructor(driver, self.main_url()+self.login_url())
         cons.open()
         cons.off_unique_checkbox()
-        time.sleep(3)
 
 
 
