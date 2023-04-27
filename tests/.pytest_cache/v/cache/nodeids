@@ -1,0 +1,11 @@
+[
+  "development_test.py::TestDevelopment::test_create_DHTML",
+  "development_test.py::TestDevelopment::test_create_actions_string",
+  "development_test.py::TestDevelopment::test_create_right_on_string",
+  "development_test.py::TestDevelopment::test_delete_DHTML",
+  "development_test.py::TestDevelopment::test_delete_actions_string",
+  "development_test.py::TestDevelopment::test_edit_DHTML",
+  "development_test.py::TestDevelopment::test_edit_actions_string",
+  "konstructor_test.py::TestKonstructors::test_create_table",
+  "menu_test.py::TestMenu::test_create_url_order"
+]

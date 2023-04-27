@@ -1,7 +1,7 @@
 from datetime import date
 import random
 import time
-
+import  uuid
 from selenium.webdriver.common import action_chains
 
 from pages.base_page import BasePage
@@ -37,7 +37,8 @@ class Test_Konstructor(BasePage):
     def create_table_directory(self): #Создание таблицы: справочника
         self.autorization()
         self.element_is_present(table.ADD_TABLE).click()
-        names_table="Справочник"+" ",str((random.randint(1,900)))+' ',str(self.date_today())
+        #names_table = "Справочник"+"_"+str(uuid.uuid4()) # getRandomName("Справочник") # getRandomName(prefix) { return prefix + "_"  + str(uuid.uuid4()) }
+        names_table=self.RandomName("Справочник")
         Table_name = self.element_is_visible(table.TABLE_NAME)
         Table_name.click()
         Table_name.send_keys(names_table)
@@ -112,7 +113,7 @@ class Test_Konstructor(BasePage):
         names.send_keys("HTML")
         self.element_is_visible(table.TYPE).click()
         self.element_is_visible(table.TYPE_HTML).click()
-        self.element_is_visible(table.SAVE).click()
+        #self.element_is_visible(table.SAVE).click()
     def Add_help(self): #Создание подсказок
         self.autorization()
         self.element_is_visible(table.EDIT_ADDITIONAL).click()

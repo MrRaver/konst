@@ -1,4 +1,5 @@
 from datetime import date
+import uuid
 
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
@@ -54,3 +55,5 @@ class BasePage:
         self.element_is_visible(au.PERSONNEL_NUMBER).send_keys('admin')
         self.element_is_visible(au.PASSWORD).send_keys('admin')
         self.element_is_visible(au.BUTTON_ENTER).click()
+    def RandomName(self,name):
+        return name+"_"+str(uuid.uuid4())
