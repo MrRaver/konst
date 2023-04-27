@@ -1,7 +1,7 @@
 from datetime import date
 import uuid
 
-from selenium.webdriver import ActionChains
+from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait as Wait
 from selenium.webdriver.support import expected_conditions as EC
@@ -55,3 +55,7 @@ class BasePage:
 
     def RandomName(self, name):
         return name + "_" + str(uuid.uuid4())
+    def clear_text(self,firstrow):
+        firstrow.send_keys(Keys.CONTROL + "a")
+        firstrow.send_keys(Keys.DELETE)
+

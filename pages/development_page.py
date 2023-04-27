@@ -1,12 +1,9 @@
 import time
-import random
-from datetime import date
-
-from selenium.webdriver import Keys
 
 from pages.base_page import BasePage
 from locators.development_locator import Reports as dev
 from locators.development_locator import CLIENTPROGRAMMING as clpro
+from locators.development_locator import SERVERPROGRAMMING as serpro
 
 
 class Test_Development(BasePage):
@@ -46,8 +43,7 @@ class Test_Development(BasePage):
 
     def delete_DHTML(self):  # 3 Удаление DHTML страниц
         self.Iframe()
-        self.element_is_visible(clpro.DELETE).click()
-        self.element_is_visible(clpro.YES_DELETE).click()
+        self.delete_first_row_client_programming()
 
     def create_actions_string(self):  # 4 Действия над строками
         self.Iframe()
@@ -68,7 +64,6 @@ class Test_Development(BasePage):
         self.element_is_visible(clpro.INPUT_ROLE).send_keys("admin")
         self.element_is_visible(clpro.FIRST_ROVE_VARIANT).click()
         self.element_is_visible(clpro.ACTION).click()
-        self.element_is_visible(clpro.ACTION).click()
         self.element_is_visible(clpro.FIRST_ACTION_VARIANT).click()
 
     def edit_actions_string(self):  # 6 Редактировнаие действия над строками
@@ -76,16 +71,14 @@ class Test_Development(BasePage):
         self.element_is_visible(clpro.ACTIONS_STRING).click()
         self.element_is_visible(clpro.EDIT).click()
         html = self.element_is_visible(clpro.INPUT_ACTION)
-        html.send_keys(Keys.CONTROL + "a")
-        html.send_keys(Keys.DELETE)
+        self.clear_text(html)
         html.send_keys("alert('bye bye'); ")
         self.element_is_visible(clpro.SAVE).click()
 
     def delete_actions_string(self):  # 7 удаление действия над строками
         self.Iframe()
         self.element_is_visible(clpro.ACTIONS_STRING).click()
-        self.element_is_visible(clpro.DELETE).click()
-        self.element_is_visible(clpro.YES_DELETE).click()
+        self.delete_first_row_client_programming()
     def create_js_trigger(self):  # 8 создание js тригера
         self.Iframe()
         self.element_is_visible(clpro.JS_TRIGGER).click()
@@ -96,6 +89,34 @@ class Test_Development(BasePage):
         self.element_is_visible(clpro.STATE_JS_TRIGGER).send_keys("main")
         self.element_is_visible(clpro.CODE_JS_TRIGGER).send_keys("alert('Что-то произошло в клиентском триггере');")
         self.element_is_visible(clpro.SAVE).click()
+    def edit_js_trigger(self):  # 9 редактирование js тригера
+        self.Iframe()
+        self.element_is_visible(clpro.JS_TRIGGER).click()
+        self.element_is_visible(clpro.EDIT).click()
+        code = self.element_is_visible(clpro.CODE_JS_TRIGGER)
+        self.clear_text(code)
+        code.send_keys("alert('Произошло что-то ужасное');")
+        self.element_is_visible(clpro.SAVE).click()
+
+    def delete_js_trigger(self):  # 10 удаление js тригера
+        self.Iframe()
+        self.element_is_visible(clpro.JS_TRIGGER).click()
+        self.delete_first_row_client_programming()
+
+
+    def create_dynamic_API(self):  # 11 удаление js тригера
+        self.Iframe_Server()
+        time.sleep(3)
+        self.element_is_visible(serpro.ADD).click()
+        names = self.RandomName("user_getTestResul")
+        print(names)
+        self.element_is_visible(serpro.INPUT_DYNAMIC_NAMES).click(names)
+        self.element_is_visible(serpro.INPUT_DYNAMIC_NAMES).click("var result = userMath.getSum (2, 3);dynamicApi.setValue('receivables', result);")
+        self.element_is_visible(clpro.SAVE).click()
+
+
+
+
 
 
 
@@ -107,3 +128,15 @@ class Test_Development(BasePage):
     def Iframe(self):
         self.element_is_visible(clpro.DEVELOPMENT).click()
         self.driver.switch_to.frame(self.element_is_visible(clpro.IFRAME))
+    def Iframe_Server(self):
+        self.element_is_visible(serpro.DEVELOPMENT).click()
+        self.element_is_visible(serpro.SERVER_PROGRAMMING).click()
+        self.driver.switch_to.frame(self.element_is_visible(serpro.IFRAME))
+
+    def delete_first_row_client_programming(self):
+        self.element_is_visible(clpro.DELETE).click()
+        self.element_is_visible(clpro.YES_DELETE).click()
+
+
+
+

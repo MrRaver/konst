@@ -51,6 +51,15 @@ class CLIENTPROGRAMMING:
     STATE_JS_TRIGGER=(By.XPATH,"/html/body/div[3]/div/div[2]/div/div[1]/div/div/div[1]/div[4]/input") # state  JS  trigger
     CODE_JS_TRIGGER=(By.XPATH,"//html/body/div[3]/div/div[2]/div/div[1]/div/div/div[2]/div/div[2]/div/div[1]/textarea") # код  JS  trigger
     SAVE_JS_TRIGGER=(By.XPATH,"/html/body/div[3]/div/div[2]/div/div[2]/button[1]") # сохранить  JS  trigger
+class SERVERPROGRAMMING:
+    IFRAME = (By.XPATH, "/html/body/div/div/div[3]/div/div/div[2]/div/div/next-gen/iframe")  # iframe
+    DEVELOPMENT = (By.XPATH, "/html/body/div/div/div[2]/ul/li[8]/a")  # Разработка
+    SERVER_PROGRAMMING = (By.XPATH, "/html/body/div/div/div[3]/div/div/div[1]/ul/li[2]/a") #Серверная разработка
+    ADD=(By.XPATH,"/html/body/div[1]/div/div[2]/div/div[2]/div/div/div/div[1]/table/thead/tr[1]/th[1]/div[1]/button") #Добавить
+    INPUT_DYNAMIC_NAMES=(By.XPATH,"/html/body/div[4]/div/div[2]/div/div[1]/div/div/div[1]/div[2]/input") #Имя динамического API
+    INPUT_DYNAMIC_CODE=(By.XPATH,"/html/body/div[4]/div/div[2]/div/div[1]/div/div/div[2]/div/div[2]/div/div[1]/textarea") #код динамического API
+    IFRAME_SERVER=(By.XPATH,'//*[@id="blockContainer"]/div/div[2]/div/div/next-gen/iframe') #Фрейм
+
 
 
 
