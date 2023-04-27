@@ -3,9 +3,10 @@ from selenium.webdriver import Keys
 from pages.base_page import BasePage
 from locators.menu_locator import Menu as menu
 import alert
+from tests.base_test import BaseTest
 
 
-class Test_Menu(BasePage):
+class Test_Menu(BasePage,BaseTest):
     def create_url_order(self): #1.Создание пункта меню
         self.autorization()
         self.element_is_visible(menu.MENU).click()
@@ -14,7 +15,9 @@ class Test_Menu(BasePage):
         names=self.element_is_visible(menu.NAMES)
         names.clear()
         names.send_keys("Заказы")
-        self.element_is_visible(menu.URL).send_keys("http://193.124.117.158/#/main/tableview/10022")
+        url=self.element_is_visible(menu.URL)
+        url.clear()
+        url.send_keys(self.main_url()+self.table_order())
         self.element_is_visible(menu.CHOICE_ROLE).click()
         self.element_is_visible(menu.INPUT_CHOICE_ROLE).send_keys("Тестовый пользователь")
         self.element_is_visible(menu.FIRST_CHOICE_ROLE).click()
