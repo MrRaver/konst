@@ -16,7 +16,7 @@ class Test_Development(BasePage):
         self.element_is_visible(clpro.DEVELOPMENT).click()
         self.driver.switch_to.frame(self.element_is_visible(clpro.IFRAME))
         self.element_is_present(clpro.ADD_DHTML).click()
-        names = "Тестовая таблица " + " ", str((random.randint(1, 900))) + ' ', str(self.date_today())
+        names = self.RandomName("Тестовая страница")
         print(names)
         self.element_is_visible(clpro.NAMES_DHTML).send_keys(names)
         self.element_is_visible(clpro.HTML).click()
@@ -34,7 +34,7 @@ class Test_Development(BasePage):
         self.element_is_visible(clpro.SAVE).click()
         self.element_is_visible(clpro.CLOSE).click()
 
-    def edit_DHTML(self):  # 2.Создание DHTML страниц
+    def edit_DHTML(self):  # 2.Редактирование DHTML страниц
         self.autorization()
         self.element_is_visible(clpro.DEVELOPMENT).click()
         self.driver.switch_to.frame(self.element_is_visible(clpro.IFRAME))
@@ -61,7 +61,7 @@ class Test_Development(BasePage):
         self.driver.switch_to.frame(self.element_is_visible(clpro.IFRAME))
         self.element_is_visible(clpro.ACTIONS_STRING).click()
         self.element_is_visible(clpro.ADD_ACTIONS_STRING).click()
-        names = "Тестовое действие  " + " ", str((random.randint(1, 900))) + ' ', str(self.date_today())
+        names = self.RandomName("Тестовая действие")
         print(names)
         self.element_is_visible(clpro.NAMES_ACTION).send_keys(names)
         self.element_is_visible(clpro.BUTTON_NAMES_ACTION).send_keys("TestAction")

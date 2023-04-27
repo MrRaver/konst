@@ -8,11 +8,11 @@ from locators.other_locator import Other as other
 
 class Others(BasePage):
     def catalog_data(self):
-       self.autorization()
-       self.element_is_present(other.ADMINIRIROVANIE).click()
-       self.element_is_present(other.SELECT).click()
-       self.element_is_present(other.CONTROL_DATA).click()
-       self.element_is_present(other.SAVE).click()
+        self.autorization()
+        self.element_is_present(other.ADMINIRIROVANIE).click()
+        self.element_is_present(other.SELECT).click()
+        self.element_is_present(other.CONTROL_DATA).click()
+        self.element_is_present(other.SAVE).click()
     def message(self):
         self.autorization()
         self.element_is_present(other.MESSAGE).click()

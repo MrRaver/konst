@@ -15,10 +15,6 @@ class BasePage:
     def open(self):
         self.driver.get(self.url)
 
-    def date_today(self):
-        current_date=date.today()
-        return current_date
-
     def element_is_visible(self,locator,timeout=5):
         return Wait(self.driver,timeout).until(EC.visibility_of_element_located(locator))
 
