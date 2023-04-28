@@ -1,5 +1,5 @@
 {
   "konstructor_test.py::TestKonstructors::test_multiple_choice": true,
-  "development_test.py::TestDevelopment::test_create_dynamic_API": true,
-  "development_test.py::TestDevelopment::test_delete_js_trigger": true
+  "development_test.py::TestDevelopment::test_delete_js_trigger": true,
+  "development_test.py::TestDevelopment::test_create_DHTML": true
 }

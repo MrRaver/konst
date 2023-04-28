@@ -55,7 +55,56 @@ class TestDevelopment(BaseTest):
         dev.open()
         dev.create_dynamic_API()
 
+    def test_edit_dynamic_API(self,driver):  # 12 редактирование динамического API
+        dev = Test_Development(driver, self.main_url() + self.login_url())
+        dev.open()
+        dev.edit_dynamic_API()
+    def test_delete_dynamic_API(self,driver):  # 13 удаление динамического API
+        dev = Test_Development(driver, self.main_url() + self.login_url())
+        dev.open()
+        dev.delete_dynamic_API()
 
+    def test_create_tasks(self,driver):  # 14  создания задания
+        dev = Test_Development(driver, self.main_url() + self.login_url())
+        dev.open()
+        dev.create_tasks()
+
+    def edit_create_tasks(self,driver):  # 15  редактирования задания
+        dev = Test_Development(driver, self.main_url() + self.login_url())
+        dev.open()
+        dev.edit_tasks()
+    def delete_create_tasks(self,driver):  # 16  удаление задания
+        dev = Test_Development(driver, self.main_url() + self.login_url())
+        dev.open()
+        dev.delete_tasks()
+    def test_create_server_function(self,driver):  # 17 создание серверной функции
+        dev = Test_Development(driver, self.main_url() + self.login_url())
+        dev.open()
+        dev.create_server_function()
+
+    def test_edit_server_function(self, driver):  # 18 редактирование серверной функции
+        dev = Test_Development(driver, self.main_url() + self.login_url())
+        dev.open()
+        dev.edit_server_function()
+    def test_delete_server_function(self, driver):  # 19 удаление серверной функции
+        dev = Test_Development(driver, self.main_url() + self.login_url())
+        dev.open()
+        dev.delete_server_function()
+
+    def test_create_sample_cell(self, driver):  # 20 создании ячейки шаблона
+        dev = Test_Development(driver, self.main_url() + self.login_url())
+        dev.open()
+        dev.create_sample_cell()
+
+    def test_edit_sample_cell(self, driver):  # 21 редактирование ячейки шаблона
+        dev = Test_Development(driver, self.main_url() + self.login_url())
+        dev.open()
+        dev.edit_sample_cell()
+
+    def test_delete_sample_cell(self, driver):  # 22 удаление ячейки шаблона
+        dev = Test_Development(driver, self.main_url() + self.login_url())
+        dev.open()
+        dev.delete_sample_cell()
     def test_filter_additional(self, driver): # 30.Проверка отображения
         dev = Test_Development(driver, self.main_url()+self.login_url())
         dev.open()
