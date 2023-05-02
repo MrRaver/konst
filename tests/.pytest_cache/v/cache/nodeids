@@ -17,7 +17,9 @@
   "development_test.py::TestDevelopment::test_edit_dynamic_API",
   "development_test.py::TestDevelopment::test_edit_js_trigger",
   "development_test.py::TestDevelopment::test_edit_server_function",
+  "development_test.py::TestDevelopment::test_table_print",
   "konstructor_test.py::TestKonstructors::test_create_table",
   "konstructor_test.py::TestKonstructors::test_multiple_choice",
-  "menu_test.py::TestMenu::test_create_url_order"
+  "menu_test.py::TestMenu::test_create_url_order",
+  "other_test.py::TestOther::test_message"
 ]

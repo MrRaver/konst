@@ -1,19 +1,16 @@
-from selenium.webdriver import Keys
-
 from pages.base_page import BasePage
 from locators.menu_locator import Menu as menu
-import alert
 from tests.base_test import BaseTest
-
 
 class Test_Menu(BasePage,BaseTest):
     def create_url_order(self): #1.Создание пункта меню
-        sself.add_menu()
+        self.add_menu()
         names_table=self.RandomName("Заказы")
         self.element_is_visible(menu.SECOND_ROW).click()
         names=self.element_is_visible(menu.NAMES)
         names.clear()
         names.send_keys(names_table)
+        print(names_table)
         url=self.element_is_visible(menu.URL)
         url.clear()
         url.send_keys(self.main_url()+self.table_order())

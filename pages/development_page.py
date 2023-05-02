@@ -79,6 +79,7 @@ class Test_Development(BasePage):
         self.Iframe()
         self.element_is_visible(clpro.ACTIONS_STRING).click()
         self.delete_first_row_client_programming()
+
     def create_js_trigger(self):  # 8 создание js тригера
         self.Iframe()
         self.element_is_visible(clpro.JS_TRIGGER).click()
@@ -89,6 +90,7 @@ class Test_Development(BasePage):
         self.element_is_visible(clpro.STATE_JS_TRIGGER).send_keys("main")
         self.element_is_visible(clpro.CODE_JS_TRIGGER).send_keys("alert('Что-то произошло в клиентском триггере');")
         self.element_is_visible(clpro.SAVE).click()
+
     def edit_js_trigger(self):  # 9 редактирование js тригера
         self.Iframe()
         self.element_is_visible(clpro.JS_TRIGGER).click()
@@ -103,20 +105,20 @@ class Test_Development(BasePage):
         self.element_is_visible(clpro.JS_TRIGGER).click()
         self.delete_first_row_client_programming()
 
-
-    def create_dynamic_API(self): # 11 Добавление динамического API
+    def create_dynamic_API(self):  # 11 Добавление динамического API
         self.Iframe_Server()
         self.element_is_visible(serpro.ADD).click()
         names = self.RandomName("user_getTestResul")
         print(names)
         self.element_is_visible(serpro.INPUT_DYNAMIC_NAMES).send_keys(names)
-        self.element_is_visible(serpro.INPUT_DYNAMIC_CODE).send_keys("var result = userMath.getSum (2, 3);dynamicApi.setValue('receivables', result);")
+        self.element_is_visible(serpro.INPUT_DYNAMIC_CODE).send_keys(
+            "var result = userMath.getSum (2, 3);dynamicApi.setValue('receivables', result);")
         self.element_is_visible(clpro.SAVE).click()
 
-    def edit_dynamic_API(self): # 12 редактирование динамического API
+    def edit_dynamic_API(self):  # 12 редактирование динамического API
         self.Iframe_Server()
         self.element_is_visible(clpro.EDIT).click()
-        code=self.element_is_visible(serpro.INPUT_DYNAMIC_CODE)
+        code = self.element_is_visible(serpro.INPUT_DYNAMIC_CODE)
         self.clear_text(code)
         code.send_keys("var result = userMath.getSum (2, 8);dynamicApi.setValue('receivables', result);")
         self.element_is_visible(clpro.SAVE).click()
@@ -124,6 +126,7 @@ class Test_Development(BasePage):
     def delete_dynamic_API(self):  # 13 удаление динамического API
         self.Iframe_Server()
         self.delete_first_row_client_programming()
+
     def create_tasks(self):  # 14  создания задания
         self.Iframe_Server()
         self.element_is_visible(serpro.TASKS).click()
@@ -148,6 +151,7 @@ class Test_Development(BasePage):
         self.Iframe_Server()
         self.element_is_visible(serpro.TASKS).click()
         self.delete_first_row_client_programming()
+
     def create_server_function(self):  # 17 создание серверной функции
         self.Iframe_Server()
         self.element_is_visible(serpro.SERVER_FUNCTION).click()
@@ -169,12 +173,14 @@ class Test_Development(BasePage):
         self.clear_text(code)
         code.send_keys("function getSum(a, b){ return a-b; }")
         self.element_is_visible(clpro.SAVE).click()
+
     def delete_server_function(self):  # 19 удаление серверной функции
         self.Iframe_Server()
         self.element_is_visible(serpro.SERVER_FUNCTION).click()
         self.element_is_visible(serpro.SHOW_All).click()
         self.element_is_visible(serpro.DELETE).click()
         self.element_is_visible(clpro.YES_DELETE).click()
+
     def create_sample_cell(self):  # 20 создание шаблона ячейки
         self.Iframe()
         self.element_is_visible(clpro.SAMPLE_CELL).click()
@@ -188,7 +194,8 @@ class Test_Development(BasePage):
         self.element_is_visible(clpro.CELL).click()
         self.element_is_visible(clpro.INPUT_HTML_CELL).send_keys("<span>{{round(value.DisplayValue,2)}}</span>")
         self.element_is_visible(clpro.JS_CELL).click()
-        self.element_is_visible(clpro.JS_INPUT).send_keys("$scope.round=function(number,digitsNumber){if(number===null|| digitsNumber===null)return null;var digits=Math.pow(10,digitsNumber);return Math.round(number*digits)/digits;};")
+        self.element_is_visible(clpro.JS_INPUT).send_keys(
+            "$scope.round=function(number,digitsNumber){if(number===null|| digitsNumber===null)return null;var digits=Math.pow(10,digitsNumber);return Math.round(number*digits)/digits;};")
         self.element_is_visible(clpro.SAVE).click()
 
     def edit_sample_cell(self):  # 21 редактирование ячейки шаблона
@@ -200,20 +207,26 @@ class Test_Development(BasePage):
         code.send_keys("<span>{{round(value.DisplayValue,4)}}</span>")
         self.element_is_visible(clpro.SAVE).click()
 
-    def test_delete_sample_cell(self):  # 22 удаление ячейки шаблона
+    def delete_sample_cell(self):  # 23 удаление ячейки шаблона
         self.Iframe()
         self.element_is_visible(clpro.SAMPLE_CELL).click()
         self.delete_first_row_client_programming()
 
-
-    def table_reports(self):
+    def table_reports(self):  # 25.Проверка отображения отчета
         self.element_is_visible(dev.DEVELOPMENT).click()
         self.element_is_visible(dev.REPORTS).click()
         self.element_is_visible(dev.REPORTS_FIRST).click()
 
+    def table_print(self):  # 27 отображение печатного документа
+        self.element_is_visible(dev.DEVELOPMENT).click()
+        self.element_is_visible(dev.REPORTS).click()
+        self.element_is_visible(dev.PRINTS_REPORTS).click()
+        time.sleep(10)
+
     def Iframe(self):
         self.element_is_visible(clpro.DEVELOPMENT).click()
         self.driver.switch_to.frame(self.element_is_visible(clpro.IFRAME))
+
     def Iframe_Server(self):
         self.element_is_visible(serpro.DEVELOPMENT).click()
         self.element_is_visible(serpro.SERVER_PROGRAMMING).click()
@@ -223,7 +236,3 @@ class Test_Development(BasePage):
     def delete_first_row_client_programming(self):
         self.element_is_visible(clpro.DELETE).click()
         self.element_is_visible(clpro.YES_DELETE).click()
-
-
-
-

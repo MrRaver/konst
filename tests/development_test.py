@@ -3,81 +3,89 @@ import time
 from pages.development_page import Test_Development
 from tests.base_test import BaseTest
 
+
 class TestDevelopment(BaseTest):
-    def test_create_DHTML(self, driver): # 1.Создание DHTML страниц
-        dev = Test_Development(driver, self.main_url()+self.login_url())
+    def test_create_DHTML(self, driver):  # 1.Создание DHTML страниц
+        dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.create_DHTML()
 
-    def test_edit_DHTML(self,driver):  # 2.Редактирование DHTML
-        dev = Test_Development(driver, self.main_url()+self.login_url())
+    def test_edit_DHTML(self, driver):  # 2.Редактирование DHTML
+        dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.edit_DHTML()
-    def test_delete_DHTML(self,driver):  # 3.Удаление DHTML
-        dev = Test_Development(driver, self.main_url()+self.login_url())
+
+    def test_delete_DHTML(self, driver):  # 3.Удаление DHTML
+        dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.delete_DHTML()
 
-    def test_create_actions_string(self,driver):  # 4 Действия над строками
+    def test_create_actions_string(self, driver):  # 4 Действия над строками
         dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.create_actions_string()
 
-    def test_create_right_on_string(self,driver):  # 5.Создание команд над строками
+    def test_create_right_on_string(self, driver):  # 5.Создание команд над строками
         dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.create_right_on_string()
 
-    def test_edit_actions_string(self,driver):  # 6 Редактировнаие действия над строками
+    def test_edit_actions_string(self, driver):  # 6 Редактировнаие действия над строками
         dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.edit_actions_string()
 
-    def test_delete_actions_string(self,driver):  # 7.удаление действия над строками
+    def test_delete_actions_string(self, driver):  # 7.удаление действия над строками
         dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.delete_actions_string()
 
-    def test_create_js_trigger(self,driver):  # 8.создание js триггера
+    def test_create_js_trigger(self, driver):  # 8.создание js триггера
         dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.create_js_trigger()
-    def test_edit_js_trigger(self,driver):  # 9 редактирование js тригера
+
+    def test_edit_js_trigger(self, driver):  # 9 редактирование js тригера
         dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.edit_js_trigger()
-    def test_delete_js_trigger(self,driver):  # 10 удаление js тригера
+
+    def test_delete_js_trigger(self, driver):  # 10 удаление js тригера
         dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.delete_js_trigger()
-    def test_create_dynamic_API(self, driver): # 11 Добавление динамического API
-        dev = Test_Development(driver, self.main_url()+self.login_url())
+
+    def test_create_dynamic_API(self, driver):  # 11 Добавление динамического API
+        dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.create_dynamic_API()
 
-    def test_edit_dynamic_API(self,driver):  # 12 редактирование динамического API
+    def test_edit_dynamic_API(self, driver):  # 12 редактирование динамического API
         dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.edit_dynamic_API()
-    def test_delete_dynamic_API(self,driver):  # 13 удаление динамического API
+
+    def test_delete_dynamic_API(self, driver):  # 13 удаление динамического API
         dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.delete_dynamic_API()
 
-    def test_create_tasks(self,driver):  # 14  создания задания
+    def test_create_tasks(self, driver):  # 14  создания задания
         dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.create_tasks()
 
-    def edit_create_tasks(self,driver):  # 15  редактирования задания
+    def edit_create_tasks(self, driver):  # 15  редактирования задания
         dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.edit_tasks()
-    def delete_create_tasks(self,driver):  # 16  удаление задания
+
+    def delete_create_tasks(self, driver):  # 16  удаление задания
         dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.delete_tasks()
-    def test_create_server_function(self,driver):  # 17 создание серверной функции
+
+    def test_create_server_function(self, driver):  # 17 создание серверной функции
         dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.create_server_function()
@@ -86,6 +94,7 @@ class TestDevelopment(BaseTest):
         dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.edit_server_function()
+
     def test_delete_server_function(self, driver):  # 19 удаление серверной функции
         dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
@@ -101,12 +110,26 @@ class TestDevelopment(BaseTest):
         dev.open()
         dev.edit_sample_cell()
 
-    def test_delete_sample_cell(self, driver):  # 22 удаление ячейки шаблона
+    def test_delete_sample_cell(self, driver):  # 23 удаление ячейки шаблона
         dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.delete_sample_cell()
-    def test_filter_additional(self, driver): # 30.Проверка отображения
-        dev = Test_Development(driver, self.main_url()+self.login_url())
+
+    def test_table_reports(self, driver):  # 25.Проверка отображения отчета
+        dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.table_reports()
 
+    def test_find_table_reports(self, driver):  # 26 поиск элемента
+        dev = Test_Development(driver, self.main_url() + self.login_url())
+        dev.open()
+        dev.find_table_print()
+
+    def test_table_print(self, driver):  # 27 отображение печатного документа
+        dev = Test_Development(driver, self.main_url() + self.login_url())
+        dev.open()
+        dev.table_print()
+    def test_download_table_print(self, driver): # 28 скачивание документа
+        dev = Test_Development(driver, self.main_url() + self.login_url())
+        dev.open()
+        dev.download_table_print()

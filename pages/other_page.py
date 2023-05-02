@@ -8,13 +8,11 @@ from locators.other_locator import Other as other
 
 class Others(BasePage):
     def catalog_data(self):
-        self.autorization()
         self.element_is_present(other.ADMINIRIROVANIE).click()
         self.element_is_present(other.SELECT).click()
         self.element_is_present(other.CONTROL_DATA).click()
         self.element_is_present(other.SAVE).click()
     def message(self):
-        self.autorization()
         self.element_is_present(other.MESSAGE).click()
         self.element_is_visible(other.ADD_MESSAGE).click()
         self.element_is_visible(other.USERS).click()
@@ -29,7 +27,6 @@ class Others(BasePage):
         self.element_is_present(other.MAIL).click()
         self.element_is_visible(other.SEND).click()
     def import_dat(self):
-        self.autorization()
         self.element_is_visible(other.IMPORT_DATA).click()
         self.element_is_visible(other.CHOICE_TABLE).click()
         names=self.element_is_visible(other.INPUT_CHOICE_TABLE)
