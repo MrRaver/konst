@@ -1,5 +1,7 @@
 import time
 
+from selenium.webdriver import Keys
+
 from pages.base_page import BasePage
 from locators.development_locator import Reports as dev
 from locators.development_locator import CLIENTPROGRAMMING as clpro
@@ -194,8 +196,7 @@ class Test_Development(BasePage):
         self.element_is_visible(clpro.CELL).click()
         self.element_is_visible(clpro.INPUT_HTML_CELL).send_keys("<span>{{round(value.DisplayValue,2)}}</span>")
         self.element_is_visible(clpro.JS_CELL).click()
-        self.element_is_visible(clpro.JS_INPUT).send_keys(
-            "$scope.round=function(number,digitsNumber){if(number===null|| digitsNumber===null)return null;var digits=Math.pow(10,digitsNumber);return Math.round(number*digits)/digits;};")
+        self.element_is_visible(clpro.JS_INPUT).send_keys( "$scope.round=function(number,digitsNumber){if(number===null|| digitsNumber===null)return null;var digits=Math.pow(10,digitsNumber);return Math.round(number*digits)/digits;};")
         self.element_is_visible(clpro.SAVE).click()
 
     def edit_sample_cell(self):  # 21 редактирование ячейки шаблона
@@ -212,16 +213,54 @@ class Test_Development(BasePage):
         self.element_is_visible(clpro.SAMPLE_CELL).click()
         self.delete_first_row_client_programming()
 
-    def table_reports(self):  # 25.Проверка отображения отчета
+    def table_reports(self):  # 25. создания отчета
         self.element_is_visible(dev.DEVELOPMENT).click()
         self.element_is_visible(dev.REPORTS).click()
-        self.element_is_visible(dev.REPORTS_FIRST).click()
+        self.element_is_visible(dev.ADD_REPORTS).click()
+        names = self.RandomName("Test1")
+        print(names)
+        self.element_is_visible(dev.NAMES_REPORTS).send_keys(names)
+        self.element_is_visible(dev.THEME_REPORTS).send_keys("Просмотр данных из таблицы справочник")
+        self.element_is_visible(dev.CHOICE_DATA).click()
+        self.element_is_visible(dev.INPUT_DATA).send_keys("31.03.2023")
+        self.element_is_visible(dev.FIRST_DATA).click()
+        self.element_is_visible(dev.CHOICE_ROLE).click()
+        self.element_is_visible(dev.INPUT_ROLE).send_keys("admin")
+        self.element_is_visible(dev.FIRST_ROLE).click()
+        self.element_is_visible(dev.CHOICE_ROLE).click()
+        self.element_is_visible(dev.ADD_FIELD).click()
+        self.element_is_visible(dev.FIRST_ROW).click()
+        name=self.element_is_visible(dev.NAMES_FIELD)
+        name.clear()
+        name.send_keys("Строка")
+        base = self.element_is_visible(dev.NAME_IN_BASE)
+        base.clear()
+        base.send_keys("Строка")
+        self.element_is_visible(dev.ADD_FIELD).click()
+        self.element_is_visible(dev.SECOND_ROW).click()
+        name = self.element_is_visible(dev.NAMES_FIELD)
+        name.clear()
+        name.send_keys("Многострочная строка")
+        base = self.element_is_visible(dev.NAME_IN_BASE)
+        base.clear()
+        base.send_keys("Многострочная строка")
+        self.element_is_visible(dev.TYPE).click()
+        self.element_is_visible(dev.MANY_STRING).click()
+        self.element_is_visible(dev.ADD_FIELD).click()
+        self.element_is_visible(dev.THIRD_ROW).click()
+        name = self.element_is_visible(dev.NAMES_FIELD)
+        name.clear()
+        name.send_keys("Дата")
+        base = self.element_is_visible(dev.NAME_IN_BASE)
+        base.clear()
+        base.send_keys("Дата")
+        self.element_is_visible(dev.TYPE).click()
+        self.element_is_visible(dev.DATE).click()
+        self.element_is_visible(dev.REQUEST).click()
+        self.element_is_visible(dev.SQL).click()
+        self.element_is_visible(dev.INPUT_SQL).send_keys("select tbl.[Строка] as [Строка]tbl.[Многострочная строка] as [Многострочная строка],tbl.[Дата] as [Дата],from nsi_view.[Справочник 31.03.2023] tbl")
+        self.element_is_visible(dev.SAVE_REPORTS).click()
 
-    def table_print(self):  # 27 отображение печатного документа
-        self.element_is_visible(dev.DEVELOPMENT).click()
-        self.element_is_visible(dev.REPORTS).click()
-        self.element_is_visible(dev.PRINTS_REPORTS).click()
-        time.sleep(10)
 
     def Iframe(self):
         self.element_is_visible(clpro.DEVELOPMENT).click()

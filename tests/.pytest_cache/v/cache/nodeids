@@ -18,6 +18,7 @@
   "development_test.py::TestDevelopment::test_edit_js_trigger",
   "development_test.py::TestDevelopment::test_edit_server_function",
   "development_test.py::TestDevelopment::test_table_print",
+  "development_test.py::TestDevelopment::test_table_reports",
   "konstructor_test.py::TestKonstructors::test_create_table",
   "konstructor_test.py::TestKonstructors::test_multiple_choice",
   "menu_test.py::TestMenu::test_create_url_order",

@@ -3,12 +3,30 @@ from selenium.webdriver.common.by import By
 class Reports:
     DEVELOPMENT=(By.XPATH,"/html/body/div/div/div[2]/ul/li[8]/a") #Разработка
     REPORTS=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[1]/ul/li[3]/a")  #Отчеты
-    PRINTS_REPORTS=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[1]/ul/li[2]/a") #Печатные отчеты
     ADD_REPORTS=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/table[1]/tbody/tr/td[3]") #Добавить отчет
     NAMES_REPORTS=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[1]/form/ul/li[1]/input")#Имя отчета
     THEME_REPORTS=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[1]/form/ul/li[2]/textarea")#Тема отчета
     CHOICE_DATA=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/table/tbody/tr/td[2]/div/div/div[2]/div/div/button/span[1]")#Выбор данных
-    REPORTS_FIRST=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/table[2]/tbody/tr/td[1]/a") #Первыйотчет
+    REPORTS_FIRST=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/table[2]/tbody/tr/td[1]/a") #Первый отчет
+    INPUT_DATA=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/table/tbody/tr/td[2]/div/div/div[2]/div/div/ul/li[4]/div/input") # ввод даты
+    FIRST_DATA = (By.XPATH, "/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/table/tbody/tr/td[2]/div/div/div[2]/div/div/ul/li[6]") # первая даты
+    CHOICE_ROLE=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/table/tbody/tr/td[2]/div/div/div[4]/div/div/button") #выбор роли
+    INPUT_ROLE = (By.XPATH, "/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/table/tbody/tr/td[2]/div/div/div[4]/div/div/ul/li[4]/div/input") #вводи роли
+    FIRST_ROLE = (By.XPATH, "/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/table/tbody/tr/td[2]/div/div/div[4]/div/div/ul/li[6]") #Первая роль
+    ADD_FIELD=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[1]/form/ul/li[5]/div/div[2]/div/div/button[2]") #Добавить поле
+    FIRST_ROW=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[1]/form/ul/li[5]/div/div[2]/div/div[1]/div/div/ul/li[1]/div/div") #Первое поле
+    SECOND_ROW=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[1]/form/ul/li[5]/div/div[2]/div/div[1]/div/div/ul/li[2]/div/div") #второе поле
+    THIRD_ROW=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[1]/form/ul/li[5]/div/div[2]/div/div[1]/div/div/ul/li[3]/div/div") # третье поле
+    NAMES_FIELD=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[1]/form/ul/li[5]/div/div[2]/div/div[2]/div/div/ul/li[1]/input") #ввод имени
+    NAME_IN_BASE=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[1]/form/ul/li[5]/div/div[2]/div/div[2]/div/div/ul/li[3]/input") #имя в базе
+    TYPE=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[1]/form/ul/li[5]/div/div[2]/div/div[2]/div/div/ul/li[5]/select") #тип
+    MANY_STRING=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[1]/form/ul/li[5]/div/div[2]/div/div[2]/div/div/ul/li[5]/select/option[6]") #многострочная строк
+    DATE=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[1]/form/ul/li[5]/div/div[2]/div/div[2]/div/div/ul/li[5]/select/option[5]") #дата
+    INPUT_SQL=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[2]/div[2]/div[2]/div/textarea")
+    REQUEST = (By.XPATH, "/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[1]/ul/li[2]/a")  # запрос
+    SQL=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div[2]/div")
+    SAVE_REPORTS=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[3]/button[2]") # сохранить отчет
+
 
 class CLIENTPROGRAMMING:
     IFRAME = (By.XPATH, "/html/body/div/div/div[3]/div/div/div[2]/div/div/next-gen/iframe")  # iframe

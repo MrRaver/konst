@@ -115,21 +115,13 @@ class TestDevelopment(BaseTest):
         dev.open()
         dev.delete_sample_cell()
 
-    def test_table_reports(self, driver):  # 25.Проверка отображения отчета
+    def test_table_reports(self, driver):  # 25. создания отчета
         dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.table_reports()
+        time.sleep(20)
 
-    def test_find_table_reports(self, driver):  # 26 поиск элемента
+    def test_find_table_reports(self, driver):  # 26 проверка просмотра и скачивания
         dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
-        dev.find_table_print()
-
-    def test_table_print(self, driver):  # 27 отображение печатного документа
-        dev = Test_Development(driver, self.main_url() + self.login_url())
-        dev.open()
-        dev.table_print()
-    def test_download_table_print(self, driver): # 28 скачивание документа
-        dev = Test_Development(driver, self.main_url() + self.login_url())
-        dev.open()
-        dev.download_table_print()
+        dev.check_reports()

@@ -3,5 +3,5 @@
   "development_test.py::TestDevelopment::test_delete_js_trigger": true,
   "development_test.py::TestDevelopment::test_create_DHTML": true,
   "menu_test.py::TestMenu::test_create_url_order": true,
-  "other_test.py::TestOther::test_message": true
+  "development_test.py::TestDevelopment::test_table_reports": true
 }
