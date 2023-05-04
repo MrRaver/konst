@@ -29,6 +29,7 @@ class TestDevelopment(BaseTest):
         dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.create_right_on_string()
+        time.sleep(15)
 
     def test_edit_actions_string(self, driver):  # 6 Редактировнаие действия над строками
         dev = Test_Development(driver, self.main_url() + self.login_url())
@@ -119,9 +120,10 @@ class TestDevelopment(BaseTest):
         dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.table_reports()
-        time.sleep(20)
 
-    def test_find_table_reports(self, driver):  # 26 проверка просмотра и скачивания
+
+    def test_check_reports(self, driver):  # 26 проверка просмотра и скачивания
         dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.check_reports()
+        time.sleep(2)

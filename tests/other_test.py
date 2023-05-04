@@ -20,3 +20,4 @@ class TestOther(BaseTest):
         othe.open()
         res=othe.import_dat()
         print(res)
+        time.sleep(4)

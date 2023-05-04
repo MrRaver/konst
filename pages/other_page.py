@@ -9,6 +9,7 @@ from locators.other_locator import Other as other
 class Others(BasePage):
     def catalog_data(self):
         self.element_is_present(other.ADMINIRIROVANIE).click()
+        self.driver.switch_to.frame(self.element_is_visible(other.IFRAME))
         self.element_is_present(other.SELECT).click()
         self.element_is_present(other.CONTROL_DATA).click()
         self.element_is_present(other.SAVE).click()
@@ -30,9 +31,9 @@ class Others(BasePage):
         self.element_is_visible(other.IMPORT_DATA).click()
         self.element_is_visible(other.CHOICE_TABLE).click()
         names=self.element_is_visible(other.INPUT_CHOICE_TABLE)
-        names.send_keys("Таблица 1 31.03.2023")
+        names.send_keys("Справочник 31.03.2023")
         names.send_keys(Keys.ENTER)
-        path=rf'F:\konst\test.xlsx'
+        path=rf'D:\Users\104481\konst\test.xlsx'
         self.element_is_not_visible(other.CHOICE_EX).send_keys(path)
         time.sleep(2)
         self.element_is_visible(other.IMPORT_BUTTON).click()

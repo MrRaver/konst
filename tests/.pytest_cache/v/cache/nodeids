@@ -1,4 +1,5 @@
 [
+  "development_test.py::TestDevelopment::test_check_reports",
   "development_test.py::TestDevelopment::test_create_DHTML",
   "development_test.py::TestDevelopment::test_create_actions_string",
   "development_test.py::TestDevelopment::test_create_dynamic_API",
@@ -22,5 +23,7 @@
   "konstructor_test.py::TestKonstructors::test_create_table",
   "konstructor_test.py::TestKonstructors::test_multiple_choice",
   "menu_test.py::TestMenu::test_create_url_order",
+  "other_test.py::TestOther::test_catalog_data",
+  "other_test.py::TestOther::test_import_data",
   "other_test.py::TestOther::test_message"
 ]

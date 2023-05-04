@@ -62,11 +62,25 @@ class Test_Development(BasePage):
     def create_right_on_string(self):  # 5.Создание команд над строками
         self.Iframe()
         self.element_is_visible(clpro.RIGHT_ON_STRING).click()
-        self.element_is_visible(clpro.ROLE).click()
-        self.element_is_visible(clpro.INPUT_ROLE).send_keys("admin")
-        self.element_is_visible(clpro.FIRST_ROVE_VARIANT).click()
         self.element_is_visible(clpro.ACTION).click()
+        self.element_is_visible(clpro.INPUT_ACT).send_keys("Тестовая действие_c108cc6b-af05-42ff-8d13-ec7117da7b0f")
         self.element_is_visible(clpro.FIRST_ACTION_VARIANT).click()
+        self.element_is_visible(clpro.TABLE).click()
+        self.element_is_visible(clpro.INPUT_TABLE).send_keys("Справочник 31.03.2023")
+        self.element_is_visible(clpro.FIRST_TABLE_VARIANT).click()
+        self.element_is_visible(clpro.STATUS).click()
+        self.element_is_visible(clpro.INPUT_STATUS).send_keys("Черновик")
+        self.element_is_visible(clpro.FIRST_STATUS_VARIANT).click()
+        self.element_is_visible(clpro.TABLE).click()
+        table=self.element_is_visible(clpro.INPUT_TABLE)
+        self.clear_text(table)
+        table.send_keys("Справочник 31.03.2023")
+        self.element_is_visible(clpro.ROLE).click()
+        self.element_is_visible(clpro.INPUT_ROLE).send_keys("Тестовая роль GR1")
+        self.element_is_visible(clpro.FIRST_ROVE_VARIANT).click()
+        self.element_is_present(clpro.CHECKBOX_DRAFT).click()
+        self.element_is_visible(clpro.SAVE_RIGHT_ON_STRING).click()
+
 
     def edit_actions_string(self):  # 6 Редактировнаие действия над строками
         self.Iframe()
@@ -260,6 +274,14 @@ class Test_Development(BasePage):
         self.element_is_visible(dev.SQL).click()
         self.element_is_visible(dev.INPUT_SQL).send_keys("select tbl.[Строка] as [Строка]tbl.[Многострочная строка] as [Многострочная строка],tbl.[Дата] as [Дата],from nsi_view.[Справочник 31.03.2023] tbl")
         self.element_is_visible(dev.SAVE_REPORTS).click()
+
+    def check_reports(self):  # 26 проверка просмотра и скачивания
+        self.element_is_visible(dev.DEVELOPMENT).click()
+        self.element_is_visible(dev.REPORTS).click()
+        self.element_is_visible(dev.FIRST_REPORT).click()
+        window_after = self.driver.window_handles[1]
+        self.driver.switch_to.window(window_after)
+        self.element_is_visible(dev.EXPORT_EXCEL).click()
 
 
     def Iframe(self):

@@ -26,6 +26,8 @@ class Reports:
     REQUEST = (By.XPATH, "/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[1]/ul/li[2]/a")  # запрос
     SQL=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div[2]/div")
     SAVE_REPORTS=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[3]/button[2]") # сохранить отчет
+    FIRST_REPORT=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/table[2]/tbody/tr/td[1]/a") #Первый отчет
+    EXPORT_EXCEL=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div[2]/span/button[2]") #Экспорт эксел
 
 
 class CLIENTPROGRAMMING:
@@ -58,9 +60,17 @@ class CLIENTPROGRAMMING:
     ROLE=(By.XPATH,"/html/body/div[1]/div/div[2]/div/div[2]/div/div[1]/div[1]/div/span") #Роли
     INPUT_ROLE=(By.XPATH,"/html/body/div[3]/div[1]/div/input") #ввод роли
     FIRST_ROVE_VARIANT=(By.XPATH,"/html/body/div[3]/div[2]/div/ul/li") #Первый вариант роли
-    ACTION = (By.XPATH, "/html/body/div[1]/div/div[2]/div/div[2]/div/div[1]/div[4]/div/span")  # Роли
-    FIRST_ACTION_VARIANT = (By.XPATH, "/html/body/div[3]/div[2]/ul/li")  # Первый вариант роли
+    ACTION = (By.XPATH, "/html/body/div[1]/div/div[2]/div/div[2]/div/div[1]/div[4]/div/span")  # Действие
+    FIRST_ACTION_VARIANT = (By.XPATH, "/html/body/div[3]/div[2]/ul")  # Первый вариант роли
     INPUT_ACT=(By.XPATH,"/html/body/div[3]/div[1]/div/input")
+    TABLE=(By.XPATH,"/html/body/div[1]/div/div[2]/div/div[2]/div/div[1]/div[2]/div/span") #Таблицы
+    INPUT_TABLE=(By.XPATH,"/html/body/div[3]/div[1]/div/input")
+    FIRST_TABLE_VARIANT=(By.XPATH,"/html/body/div[3]/div[2]/div/ul/li[1]")
+    STATUS=(By.XPATH,"/html/body/div[1]/div/div[2]/div/div[2]/div/div[1]/div[3]/div/span") #Статус
+    INPUT_STATUS=(By.XPATH,"/html/body/div[3]/div[1]/div/input") # ввод Статус
+    FIRST_STATUS_VARIANT=(By.XPATH,"/html/body/div[3]/div[2]/ul/li[1]") # первый вариант Статус
+    CHECKBOX_DRAFT=(By.XPATH,"/html/body/div[1]/div/div[2]/div/div[2]/div/div[2]/div[1]/div/div/div/div[2]")
+    SAVE_RIGHT_ON_STRING = (By.XPATH, "/html/body/div[1]/div/div[2]/div/div[2]/div/div[2]/div[2]/button[5]/span[1]")  # сохранение прав над строками
     JS_TRIGGER=(By.XPATH,"/html/body/div[1]/div/div[2]/div/div[1]/div/ul/li[5]") #Js trigger
     NAMES_JS_TRIGGER=(By.XPATH,"/html/body/div[3]/div/div[2]/div/div[1]/div/div/div[1]/div[2]/input") # имя  JS  trigger
     STATE_JS_TRIGGER=(By.XPATH,"/html/body/div[3]/div/div[2]/div/div[1]/div/div/div[1]/div[4]/input") # state  JS  trigger
