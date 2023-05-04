@@ -20,10 +20,18 @@
   "development_test.py::TestDevelopment::test_edit_server_function",
   "development_test.py::TestDevelopment::test_table_print",
   "development_test.py::TestDevelopment::test_table_reports",
+  "filter_test.py::TestFilters::test_filter_additional",
+  "filter_test.py::TestFilters::test_filter_additional_zakr",
+  "konstructor_condition_test.py::TestConditionKonstructors::test_create_folder",
+  "konstructor_condition_test.py::TestConditionKonstructors::test_konstructor_condition_save",
   "konstructor_test.py::TestKonstructors::test_create_table",
   "konstructor_test.py::TestKonstructors::test_multiple_choice",
   "menu_test.py::TestMenu::test_create_url_order",
   "other_test.py::TestOther::test_catalog_data",
   "other_test.py::TestOther::test_import_data",
-  "other_test.py::TestOther::test_message"
+  "other_test.py::TestOther::test_message",
+  "other_test.py::TestOther::test_rc",
+  "user_test.py::TestRoleUser::test_add_additional_role_GR1",
+  "user_test.py::TestRoleUser::test_off_users",
+  "user_test.py::TestRoleUser::test_off_visible"
 ]

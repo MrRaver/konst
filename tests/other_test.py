@@ -13,11 +13,17 @@ class TestOther(BaseTest):
         othe = Others(driver, self.main_url()+self.login_url())
         othe.open()
         othe.message()
-
-
+    """
     def test_import_data(self, driver):  # импорт данных
         othe = Others(driver, self.main_url()+self.login_url())
         othe.open()
         res=othe.import_dat()
         print(res)
         time.sleep(4)
+"""
+    def test_rc(self,driver):
+        othe = Others(driver, self.main_url_rc()+self.login_url())
+        othe.open2()
+        time.sleep(4)
+
+

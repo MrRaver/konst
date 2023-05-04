@@ -129,7 +129,7 @@ class User(BasePage):
         self.element_is_present(user.ADD_FIELD).click()
         self.element_is_present(user.EDIT_FIELD).click()
         self.element_is_visible(user.BUSINESS_PROCESS).click()
-        self.element_is_present(user.TRANSLITION_ALL_STATUS).click()
+        self.element_is_present(user.ALL_STATUS).click()
         self.element_is_visible(user.SAVE).click()
     def delete_role_GR1(self): #12.Удаление роли в таблице
         self.rigth()

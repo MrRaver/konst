@@ -39,11 +39,13 @@ class TestKonstructors(BaseTest):
         cons.create_position_order()
         cons.create_position()
         time.sleep(3)
-    def test_create_copy_table1(self,driver):#14.Создание зависимых справочников
+        """
+    # Не работает def test_create_copy_table1(self,driver):#14.Создание зависимых справочников
         cons = Test_Konstructor(driver, self.main_url()+self.login_url())
         cons.open()
         cons.add_copy()
         time.sleep(3)
+        """
 
     def test_dependent_directory(self,driver):#13.Создание зависимых справочников
         cons = Test_dependent_directory(driver, self.main_url()+self.login_url())

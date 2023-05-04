@@ -11,7 +11,6 @@ from locators.konstructor_locator import CreateTable as table
 
 class Test_Konstructors_Condition(BasePage):
     def create_table_test1(self):  #1.Предварительная подготовка
-        self.autorization()
         self.element_is_present(table.ADD_TABLE).click()
         names_table = self.RandomName("Тест 1")
         print (names_table)

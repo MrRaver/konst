@@ -22,9 +22,9 @@ class Reports:
     TYPE=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[1]/form/ul/li[5]/div/div[2]/div/div[2]/div/div/ul/li[5]/select") #тип
     MANY_STRING=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[1]/form/ul/li[5]/div/div[2]/div/div[2]/div/div/ul/li[5]/select/option[6]") #многострочная строк
     DATE=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[1]/form/ul/li[5]/div/div[2]/div/div[2]/div/div/ul/li[5]/select/option[5]") #дата
-    INPUT_SQL=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[2]/div[2]/div[2]/div/textarea")
-    REQUEST = (By.XPATH, "/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[1]/ul/li[2]/a")  # запрос
+    REQUEST = (By.XPATH, "/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[1]/ul/li[2]")  # запрос
     SQL=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[2]/div[2]/div[2]/div/div[2]/div")
+    INPUT_SQL = (By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[1]/form/ul/li[3]/div/textarea")
     SAVE_REPORTS=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div/div[3]/button[2]") # сохранить отчет
     FIRST_REPORT=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/table[2]/tbody/tr/td[1]/a") #Первый отчет
     EXPORT_EXCEL=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[2]/div[2]/span/button[2]") #Экспорт эксел

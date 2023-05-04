@@ -16,6 +16,9 @@ class BasePage:
     def open(self):
         self.driver.get(self.url)
         self.autorization()
+    def open2(self):
+        self.driver.get(self.url)
+        self.autorization_rc()
 
     def element_is_visible(self, locator, timeout=5):
         return Wait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
@@ -49,10 +52,26 @@ class BasePage:
         action.perform()
 
     def autorization(self):
-        self.element_is_visible(au.PERSONNEL_NUMBER).send_keys('admin')
-        self.element_is_visible(au.PASSWORD).send_keys('admin')
+        self.element_is_visible(au.PERSONNEL_NUMBER).send_keys(self.login_admin())
+        self.element_is_visible(au.PASSWORD).send_keys(self.password_admin())
         self.element_is_visible(au.BUTTON_ENTER).click()
 
+    def login_admin(self):
+        return "admin"
+    def password_admin(self):
+        return "admin"
+
+
+    def autorization_rc(self):
+        self.element_is_visible(au.PERSONNEL_NUMBER).send_keys(self.login_admin_rc())
+        self.element_is_visible(au.PASSWORD).send_keys(self.password_admin_rc())
+        self.element_is_visible(au.BUTTON_ENTER).click()
+
+    def login_admin_rc(self):
+        return "6669991"
+
+    def password_admin_rc(self):
+        return "Rhjrjlbk1988"
     def RandomName(self, name):
         return name + "_" + str(uuid.uuid4())
     def clear_text(self,firstrow):

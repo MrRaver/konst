@@ -3,6 +3,11 @@ class BaseTest:
     def main_url():
         url = 'http://193.124.117.158/#/'
         return url
+
+    @staticmethod
+    def main_url_rc():
+        url = 'http://smartbase-rc/#/'
+        return url
     @staticmethod
     def login_url():
         url = 'login'
