@@ -14,7 +14,7 @@ class TestOther(BaseTest):
         othe.open()
         othe.message()
 
-    def test_import_data(self, driver):  # импорт данных
+    def test_import_data(self, driver):  # импорт данных, нужно указаьть путь pages>other_page>import_dat
         othe = Others(driver, self.main_url()+self.login_url())
         othe.open()
         res=othe.import_dat()
