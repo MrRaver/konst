@@ -71,21 +71,22 @@ class TestDevelopment(BaseTest):
         dev.open()
         dev.delete_dynamic_API()
 
-    """Не работает def test_create_tasks(self, driver):  # 14  создания задания
+    def test_create_tasks(self, driver):  # 14  создания задания
         dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.create_tasks()
 
-     Не работает def edit_create_tasks(self, driver):  # 15  редактирования задания
+
+    def test_edit_tasks(self, driver):  # 15  редактирования задания
         dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.edit_tasks()
-
-     Не работает def delete_create_tasks(self, driver):  # 16  удаление задания
+    def test_delete_tasks(self, driver):  # 16  удаление задания
         dev = Test_Development(driver, self.main_url() + self.login_url())
         dev.open()
         dev.delete_tasks()
-        """
+
+
 
     def test_create_server_function(self, driver):  # 17 создание серверной функции
         dev = Test_Development(driver, self.main_url() + self.login_url())
@@ -102,31 +103,34 @@ class TestDevelopment(BaseTest):
         dev.open()
         dev.delete_server_function()
 
-        """
-    # Не работает  def test_create_sample_cell(self, driver):  # 20 создании ячейки шаблона
-        dev = Test_Development(driver, self.main_url() + self.login_url())
-        dev.open()
-        dev.create_sample_cell()
-        time.sleep(12)
 
-    # Не работаетdef test_edit_sample_cell(self, driver):  # 21 редактирование ячейки шаблона
-        dev = Test_Development(driver, self.main_url() + self.login_url())
-        dev.open()
-        dev.edit_sample_cell()
-
-    # Не работаетdef test_delete_sample_cell(self, driver):  # 23 удаление ячейки шаблона
-        dev = Test_Development(driver, self.main_url() + self.login_url())
-        dev.open()
-        dev.delete_sample_cell()
-
-    # Не работает def test_table_reports(self, driver):  # 25. создания отчета
-        dev = Test_Development(driver, self.main_url() + self.login_url())
-        dev.open()
-        dev.table_reports()
 
 """
-    def test_check_reports(self, driver):  # 26 проверка просмотра и скачивания
-        dev = Test_Development(driver, self.main_url() + self.login_url())
-        dev.open()
-        dev.check_reports()
-        time.sleep(2)
+def test_create_sample_cell(self, driver):  # 20 создании ячейки шаблона
+    dev = Test_Development(driver, self.main_url() + self.login_url())
+    dev.open()
+    dev.create_sample_cell()
+
+# Не работаетdef test_edit_sample_cell(self, driver):  # 21 редактирование ячейки шаблона
+    dev = Test_Development(driver, self.main_url() + self.login_url())
+    dev.open()
+    dev.edit_sample_cell()
+
+# Не работаетdef test_delete_sample_cell(self, driver):  # 23 удаление ячейки шаблона
+    dev = Test_Development(driver, self.main_url() + self.login_url())
+    dev.open()
+    dev.delete_sample_cell()
+
+# Не работает def test_table_reports(self, driver):  # 25. создания отчета
+    dev = Test_Development(driver, self.main_url() + self.login_url())
+    dev.open()
+    dev.table_reports()
+
+"""
+
+
+def test_check_reports(self, driver):  # 26 проверка просмотра и скачивания
+    dev = Test_Development(driver, self.main_url() + self.login_url())
+    dev.open()
+    dev.check_reports()
+    time.sleep(2)

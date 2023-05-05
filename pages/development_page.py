@@ -157,7 +157,7 @@ class Test_Development(BasePage):
     def edit_tasks(self):  # 15  редактирование задания
         self.Iframe_Server()
         self.element_is_visible(serpro.TASKS).click()
-        self.element_is_visible(clpro.EDIT).click()
+        self.element_is_visible(clpro.EDIT2).click()
         code = self.element_is_visible(serpro.INPUT_IN_TRANSATION)
         self.clear_text(code)
         code.send_keys("userMath.getConversion(0,0);")
@@ -166,7 +166,10 @@ class Test_Development(BasePage):
     def delete_tasks(self):  # 16 удаление задания
         self.Iframe_Server()
         self.element_is_visible(serpro.TASKS).click()
-        self.delete_first_row_client_programming()
+        self.element_is_visible(clpro.DELETE2).click()
+        time.sleep(2)
+        self.element_is_visible(clpro.YES_DELETE2).click()
+
 
     def create_server_function(self):  # 17 создание серверной функции
         self.Iframe_Server()

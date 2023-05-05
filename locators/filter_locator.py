@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 class Filtesr_Locators:
     ADDITIONAL_EDIT=(By.XPATH,"/html/body/div/div/div[3]/div/div/div/div[3]/div[3]/div/div[2]/div/div/div/div[2]/table/tbody/tr[5]/td/div/div/div[3]/a") #справочник
-    TABLE3=(By.XPATH,"/html/body/div/div/div[3]/div/div/div/div[3]/div[3]/div/div[2]/div/div/div/div[2]/table/tbody/tr[7]/td/div/div/div[3]/a") #Таблица3
+    TABLE3=(By.XPATH,"/html/body/div/div/div[3]/div/div/div/div[3]/div[3]/div/div[2]/div/div/div/div[2]/table/tbody/tr[8]/td/div/div/div[3]/a") #Таблица3
     ID_INPUT=(By.XPATH,"/html/body/div/div/div[3]/div/view-table/div/custom-grid/div[1]/div[2]/table/thead/tr[3]/th[1]/div[1]/input") #Ввод id
     MANY_STRING_INPUT=(By.XPATH,"/html/body/div/div/div[3]/div/view-table/div/custom-grid/div[1]/div[2]/table/thead/tr[3]/th[2]/div[1]/input") #ввод множественной строки
     STRING_INPUT=(By.XPATH,"/html/body/div/div/div[3]/div/view-table/div/custom-grid/div[1]/div[2]/table/thead/tr[3]/th[3]/div[1]/input") #ввод строки

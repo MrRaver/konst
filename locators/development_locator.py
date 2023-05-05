@@ -50,8 +50,11 @@ class CLIENTPROGRAMMING:
     CLOSE=(By.XPATH,"/html/body/div[3]/div/div[1]/div/button/span[1]") #Закрыть
     SERVER_PROGRAMMING=(By.XPATH,"/html/body/div/div/div[3]/div/div/div[1]/ul/li[2]/a")
     EDIT=(By.XPATH,"/html/body/div[1]/div/div[2]/div/div[2]/div/div/div/div[1]/table/tbody/tr/td[1]/div/button[1]")
+    EDIT2=(By.XPATH,"/html/body/div[1]/div/div[2]/div/div[2]/div/div/div/div[1]/table/tbody/tr/td[1]/div/div/button[1]")
     DELETE=(By.XPATH,"/html/body/div[1]/div/div[2]/div/div[2]/div/div/div/div[1]/table/tbody/tr/td[1]/div/button[2]")
+    DELETE2=(By.XPATH,"/html/body/div[1]/div/div[2]/div/div[2]/div/div/div/div[1]/table/tbody/tr/td[1]/div/div/button[2]")
     YES_DELETE=(By.XPATH,"/html/body/div[3]/div/div[3]/button[2]") #Да, удалить
+    YES_DELETE2=(By.XPATH,"/html/body/div[3]/div/div[3]/button[2]") #Да, удалить
     ACTIONS_STRING=(By.XPATH,"/html/body/div[1]/div/div[2]/div/div[1]/div/ul/li[2]/a") #Дейсвия над строками
     NAMES_ACTION=(By.XPATH,"/html/body/div[3]/div/div[2]/div/div[1]/div/div/div[1]/div[2]/input") #имя действий над строками
     BUTTON_NAMES_ACTION=(By.XPATH,"/html/body/div[3]/div/div[2]/div/div[1]/div/div/div[1]/div[4]/input") #имя кнопки действий над строками

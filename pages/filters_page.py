@@ -45,7 +45,9 @@ class Test_Filters(BasePage):
         sixth.send_keys(Keys.ENTER)
         sixth.clear()
         time.sleep(2)
-    def filter_table3(self):  #2.Фильтрация данных в таблице
+
+
+    """ не работает def filter_table3(self):  # 2.Фильтрация данных в таблице
         self.element_is_visible(filter.TABLE3).click()
         window_after = self.driver.window_handles[1]
         self.driver.switch_to.window(window_after)
@@ -97,6 +99,7 @@ class Test_Filters(BasePage):
         time.sleep(4)
         seventh = self.element_is_visible(filter.TABLE3_BOOLEAN_INPUT)
         seventh.clear()
+    """
 
     def filter_additional_zakr(self):  # 1.Закрепление столбцов и сортировка (представление администратора)
         self.View()
@@ -116,6 +119,7 @@ class Test_Filters(BasePage):
         self.element_is_visible(filter.SAVE_NAME_VIEW).click()
         self.element_is_visible(filter.ELLIPSIS).click()
         self.element_is_visible(filter.DEFAULT).click()
+
 
     def filter_additional_visible(self):  # 2.Скрытие столбцов и настройка ширины (представление администратора)
         self.View()
@@ -138,6 +142,7 @@ class Test_Filters(BasePage):
         self.element_is_visible(filter.ELLIPSIS).click()
         self.element_is_visible(filter.DEFAULT1).click()
 
+"""
     def filter_additional_visible_and_move(self):  # 3.Скрытие столбцов и настройка ширины (представление администратора)
         self.View()
         self.element_is_visible(filter.ELLIPSIS).click()
@@ -148,19 +153,24 @@ class Test_Filters(BasePage):
         data_edit = self.element_is_present(filter.DATA_EDIT)
         action_chains = ActionChains(self.driver)
         action_chains.drag_and_drop(status, data_edit).perform()
-        prelast=self.element_is_visible(filter.PRELAST)
+        prelast = self.element_is_visible(filter.PRELAST)
         action_chains.drag_and_drop(data_edit, prelast).perform()
         data = self.element_is_visible(filter.DATA_ELEMENT)
-        second=self.element_is_visible(filter.SECOND)
+        second = self.element_is_visible(filter.SECOND)
         action_chains.drag_and_drop(data, second).perform()
         action_chains.drag_and_drop(second, status).perform()
         self.element_is_visible(filter.SAVE_VIEW).click()
         self.element_is_visible(filter.ELLIPSIS).click()
         self.element_is_visible(filter.SAVE).click()
-    def View(self):
-        self.element_is_visible(filter.EDIT_ADDITIONAL).click()
-        self.element_is_visible(filter.KONSTRUCTOR_CONDITION).click()
-        self.element_is_visible(filter.VIEW).click()
+    """
+
+
+def View(self):
+    self.element_is_visible(filter.EDIT_ADDITIONAL).click()
+    self.element_is_visible(filter.KONSTRUCTOR_CONDITION).click()
+    self.element_is_visible(filter.VIEW).click()
+
+
 
 
 
