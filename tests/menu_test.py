@@ -9,7 +9,6 @@ class TestMenu(BaseTest):
         menu = Test_Menu(driver, self.main_url()+self.login_url())
         menu.open()
         menu.create_url_order()
-        time.sleep(10)
 
     def test_create_url_order_picture(self, driver):  # 2.Добавление картинки
         menu = Test_Menu(driver, self.main_url()+self.login_url())

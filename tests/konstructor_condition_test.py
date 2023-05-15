@@ -19,7 +19,6 @@ class TestConditionKonstructors(BaseTest):
         cond=Test_Konstructors_Condition(driver,self.main_url()+self.login_url())
         cond.open()
         cond.konstructor_condition_edit()
-        time.sleep(4)
     def test_konstructor_condition_status(self,driver): # #4.Конструктор условий. Перевод в статусы
         cond=Test_Konstructors_Condition(driver,self.main_url()+self.login_url())
         cond.open()
@@ -29,16 +28,14 @@ class TestConditionKonstructors(BaseTest):
         cond = Test_Konstructors_Condition(driver, self.main_url()+self.login_url())
         cond.open()
         cond.konstructor_condition_filter_directory()
-        time.sleep(4)
 
     def test_konstructor_condition_filter(self, driver):  # 6.Конструктор условий. Фильтрация
         cond = Test_Konstructors_Condition(driver, self.main_url()+self.login_url())
         cond.open()
         cond.konstructor_condition_filter()
-        time.sleep(4)
     def test_konstructor_condition_edits_predict(self, driver):  # 8.Конструктор условий. Изменение предикатов
         cond = Test_Konstructors_Condition(driver, self.main_url()+self.login_url())
         cond.open()
         cond.konstructor_condition_edits_predict()
-        time.sleep(4)
+
 

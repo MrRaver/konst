@@ -1,22 +1,13 @@
-from datetime import date
-import random
 import time
-import uuid
-from selenium.webdriver.common import action_chains
-
 from pages.base_page import BasePage
 from locators.konstructor_locator import CreateFolder as create
 from locators.konstructor_locator import DeleteFolder as delete
 from locators.konstructor_locator import CreateTable as table
 from selenium.webdriver import Keys
 from selenium.webdriver import ActionChains
-
-
 class Test_Konstructor(BasePage):
     def create_folder(self):  # Создание папки
-        self.autorization()
-        self.element_is_present(create.ARROW_DOWN).click()
-        self.element_is_visible(create.ADD_FOLDER).click()
+        self.add_folder()
         self.element_is_visible(create.EDIT).click()
         Title = self.element_is_present(create.INPUT_TEXT)
         Title.click()
@@ -25,9 +16,7 @@ class Test_Konstructor(BasePage):
         self.element_is_present(create.CHECK_MARK).click()
 
     def delete_folder(self):  # Удаление папки
-        self.autorization()
-        self.element_is_visible(delete.ARROW_DOWN).click()
-        self.element_is_visible(delete.ADD_FOLDER).click()
+        self.add_folder()
         Move = self.element_is_present(delete.MOVING)
         Place = self.element_is_present(delete.PLACE)
         action_chains = ActionChains(self.driver)
@@ -38,7 +27,6 @@ class Test_Konstructor(BasePage):
         self.driver.switch_to.alert.accept()
 
     def create_table_directory(self):  # Создание таблицы: справочника
-        self.autorization()
         self.element_is_present(table.ADD_TABLE).click()
         names_table = self.RandomName("Справочник")
         Table_name = self.element_is_visible(table.TABLE_NAME)
@@ -118,7 +106,6 @@ class Test_Konstructor(BasePage):
         self.element_is_visible(table.SAVE).click()
 
     def Add_help(self):  # Создание подсказок
-        self.autorization()
         self.element_is_visible(table.EDIT_ADDITIONAL).click()
         self.element_is_visible(table.SECOND_ROW).click()
         self.element_is_visible(table.ADD_ADDITINAL_SETTING).click()
@@ -132,7 +119,6 @@ class Test_Konstructor(BasePage):
         self.element_is_visible(table.SAVE).click()
 
     def use_directory(self):  # Создание таблицы, использующей справочник
-        self.autorization()
         self.element_is_visible(table.ADD_TABLE).click()
         names_table = self.RandomName("Таблица 1")
         print(names_table)
@@ -322,7 +308,6 @@ class Test_Konstructor(BasePage):
         self.element_is_visible(table.SAVE).click()
 
     def multiple_table(self):  # 15.Создание таблицы, использующей справочник с множественным выбором
-        self.autorization()
         self.element_is_visible(table.ADD_TABLE).click()
         names_table = self.RandomName("Таблица 3")
         print(names_table)
@@ -521,7 +506,6 @@ class Test_Konstructor(BasePage):
         self.element_is_visible(table.SAVE).click()
 
     def between_tables(self):  # 16.Создание перехода в другую таблицу
-        self.autorization()
         self.element_is_visible(table.EDIT_TABLE1).click()
         self.element_is_visible(table.SECOND_ROW).click()
         self.element_is_visible(table.ADD_ADDITINAL_SETTING).click()
@@ -544,7 +528,6 @@ class Test_Konstructor(BasePage):
         self.element_is_visible(table.SAVE).click()
 
     def add_copy(self):  # 14.Создание зависимых справочников
-        self.autorization()
         self.element_is_visible(table.EDIT_TABLE1).click()
 
         self.element_is_visible(table.SAVE_AS).click()
@@ -557,7 +540,6 @@ class Test_Konstructor(BasePage):
         # self.element_is_visible(table.SAVES).click()
 
     def add_editForm(self):  # 17.Создание разрешения добавления в форме редактирования для справочника
-        self.autorization()
         self.element_is_visible(table.EDIT_TABLE1).click()
         self.element_is_visible(table.THiRD_ROW).click()
         self.element_is_visible(table.SETTING_ADDITINAL).click()
@@ -565,7 +547,6 @@ class Test_Konstructor(BasePage):
         self.element_is_visible(table.SAVE).click()
 
     def delete_table(self):  # 20.Создание разрешения добавления в форме редактирования для справочника
-        self.autorization()
         self.element_is_visible(table.ADD_TABLE).click()
         names_table = self.RandomName("Таблица для удаления")
         Table_name = self.element_is_visible(table.TABLE_NAME)
@@ -582,7 +563,6 @@ class Test_Konstructor(BasePage):
         return self.element_is_visible(table.ERRORS_TEXT).text
 
     def edit_table_name(self):  # 21.Редактирование Alias и названий таблиц
-        self.autorization()
         self.element_is_visible(table.EDIT_ADDITIONAL).click()
         Table_name = self.element_is_visible(table.TABLE_NAME)
         Table_name.click()
@@ -607,7 +587,6 @@ class Test_Konstructor(BasePage):
         self.element_is_visible(table.SAVE).click()
 
     def matches_row(self):  # 22.Смена местами Alias и названий нескольких столбцов
-        self.autorization()
         self.element_is_visible(table.EDIT_ADDITIONAL).click()
         self.element_is_visible(table.SECOND_ROW).click()
         names = self.element_is_visible(table.NAMES)
@@ -627,14 +606,12 @@ class Test_Konstructor(BasePage):
         return self.element_is_visible(table.ERRORS_TEXT).text
 
     def moving_rows(self):  # 23.Перемещение столбцов
-        self.autorization()
         self.element_is_visible(table.EDIT_ADDITIONAL).click()
         self.element_is_visible(table.SECOND_ROW).click()
         self.element_is_visible(table.STRING_DOWN).click()
         self.element_is_visible(table.SAVE).click()
 
     def fix_number(self):  # 24.Закрепление столбца
-        self.autorization()
         self.element_is_visible(table.EDIT_ADDITIONAL).click()
         self.element_is_visible(table.FIRST_ROW).click()
         self.element_is_visible(table.ADD_ADDITINAL_SETTING).click()
@@ -642,14 +619,12 @@ class Test_Konstructor(BasePage):
         self.element_is_visible(table.SAVE).click()
 
     def test_status(self):  # 25.Отключение статусов
-        self.autorization()
         self.element_is_visible(table.EDIT_ADDITIONAL).click()
         self.element_is_visible(table.STATUS).click()
         self.element_is_visible(table.CHECKBOX_STATUS).click()
         self.element_is_visible(table.SAVE).click()
 
     def change_dimesnion(self):  # 26.Изменение ширины ячейки в форме редактирования
-        self.autorization()
         self.element_is_visible(table.EDIT_ADDITIONAL).click()
         self.element_is_visible(table.THiRD_ROW).click()
         self.element_is_visible(table.ADD_ADDITINAL_SETTING).click()
@@ -658,7 +633,6 @@ class Test_Konstructor(BasePage):
         self.element_is_visible(table.SAVE).click()
 
     def change_sample(self):  # 27.Изменение шаблона ячейки
-        self.autorization()
         self.element_is_visible(table.EDIT_ADDITIONAL).click()
         self.element_is_visible(table.FIFTH_ROW).click()
         self.element_is_visible(table.SETTING_DEVELOP).click()
@@ -668,7 +642,6 @@ class Test_Konstructor(BasePage):
         self.element_is_visible(table.SAVE).click()
 
     def chance_edit_rows(self):  # 28.Возможность редактирования в строке
-        self.autorization()
         self.element_is_visible(table.EDIT_ADDITIONAL).click()
         self.element_is_visible(table.EDITS_TABLE).click()
         self.element_is_present(table.EDIT_DATA_WINDOW).click()
@@ -677,7 +650,6 @@ class Test_Konstructor(BasePage):
         self.element_is_visible(table.SAVE).click()
 
     def add_unique_row(self):  # 30.Создание уникального и обязательного для заполнения поля
-        self.autorization()
         self.element_is_visible(table.EDIT_ADDITIONAL).click()
         self.element_is_visible(table.ADD_ROW).click()
         self.element_is_visible(table.ELEVENTH_ROW).click()
@@ -692,18 +664,20 @@ class Test_Konstructor(BasePage):
         self.element_is_visible(table.SAVE).click()
 
     def off_unique_checkbox(self):  # 31.Создание уникального и обязательного для заполнения поля
-        self.autorization()
         self.element_is_visible(table.EDIT_ADDITIONAL).click()
         self.element_is_visible(table.ELEVENTH_ROW).click()
         self.element_is_present(table.CHECK_UNIQUE).click()
         self.element_is_present(table.CHECK_REQUIRED).click()
         self.element_is_visible(table.SAVE).click()
 
+    def add_folder(self):
+        self.element_is_present(create.ARROW_DOWN).click()
+        self.element_is_visible(create.ADD_FOLDER).click()
+
 
 class Table_in_table(BasePage):
     # Создание типа данных таблица внутри таблицы
     def table_order(self):  # создание таблицы заказ
-        self.autorization()
         self.element_is_present(table.ADD_TABLE).click()
         names_table = self.RandomName("Заказ")
         print (names_table)
@@ -721,7 +695,6 @@ class Table_in_table(BasePage):
         self.element_is_visible(table.SAVE).click()
 
     def create_position_order(self):  # создание позиции в заказе
-        self.autorization()
         self.element_is_visible(table.KONSTRUCTOR).click()
         self.element_is_present(table.ADD_TABLE).click()
         names_table = self.RandomName("Позиции в заказе")
@@ -761,7 +734,6 @@ class Table_in_table(BasePage):
 
     def create_position(self):  # добавление колонку позиции
         self.autorization()
-        self.element_is_visible(table.KONSTRUCTOR).click()
         self.element_is_visible(table.EDIT_ORDER).click()
         self.element_is_visible(table.ADD_ROW).click()
         self.element_is_visible(table.THiRD_ROW).click()
@@ -799,8 +771,6 @@ class Test_dependent_directory(BasePage):
         self.element_is_visible(table.SAVE).click()
 
     def create_table_data(self):
-        self.autorization()
-        self.element_is_visible(table.KONSTRUCTOR).click()
         self.element_is_visible(table.ADD_TABLE).click()
         names_table = self.RandomName("данныe")
         Table_name = self.element_is_visible(table.TABLE_NAME)
@@ -885,3 +855,6 @@ class Test_dependent_directory(BasePage):
         view.send_keys("название типа")
         view.send_keys(Keys.ENTER)
         self.element_is_visible(table.SAVE).click()
+
+
+

@@ -1,10 +1,18 @@
 class BaseTest:
-    def main_url(self):
+    @staticmethod
+    def main_url():
         url = 'http://193.124.117.158/#/'
         return url
-    def login_url(self):
+
+    @staticmethod
+    def main_url_rc():
+        url = 'http://smartbase-rc/#/'
+        return url
+    @staticmethod
+    def login_url():
         url = 'login'
         return url
-    def table_order(self):
+    @staticmethod
+    def table_order():
         url = 'main/tableview/10022'
         return url

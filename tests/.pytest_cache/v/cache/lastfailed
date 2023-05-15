@@ -1,4 +1,9 @@
 {
-  "development_test.py::TestDevelopment::test_delete_DHTML": true,
-  "konstructor_test.py::TestKonstructors::test_multiple_choice": true
+  "konstructor_test.py::TestKonstructors::test_multiple_choice": true,
+  "development_test.py::TestDevelopment::test_delete_js_trigger": true,
+  "development_test.py::TestDevelopment::test_create_DHTML": true,
+  "development_test.py::TestDevelopment::test_table_reports": true,
+  "filter_test.py::TestFilters::test_filter_additional": true,
+  "filter_test.py": true,
+  "filter_test.py::TestFilters::test_filter_additional_zakr": true
 }

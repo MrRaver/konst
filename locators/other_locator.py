@@ -2,9 +2,10 @@ from selenium.webdriver.common.by import By
 
 class Other:
     ADMINIRIROVANIE=(By.XPATH,"/html/body/div/div/div[2]/ul/li[9]/a/span")#Админимтрирование
-    SELECT=(By.XPATH,"/html/body/div/div/div[3]/div/div/div/div[2]/div/div/div/table/tbody/tr[1]/td[2]/div/div[1]/div/div[1]/span") #ВЫьор
-    CONTROL_DATA=(By.XPATH,"/html/body/div/div/div[3]/div/div/div/div[2]/div/div/div/table/tbody/tr[1]/td[2]/div/div[1]/div/ul/li/div[3]/span") #контроль дата
-    SAVE=(By.CLASS_NAME,"fa fa-2x fa-save") #Сохранить
+    SELECT=(By.XPATH,"/html/body/div[1]/div/div[2]/div/div[2]/div[1]/div[2]/div/div") #ВЫьор
+    IFRAME=(By.XPATH,"/html/body/div/div/div[3]/div/div/next-gen/iframe")
+    CONTROL_DATA=(By.XPATH,"/html/body/div[3]/div/ul/li[1]") #контроль дата
+    SAVE=(By.XPATH,"/html/body/div[1]/div/div[2]/div/div[2]/div[1]/div[3]/button") #Сохранить
 
     MESSAGE=(By.XPATH,"/html/body/div[1]/div/div[2]/ul/li[5]/a") #Уведомления
     ADD_MESSAGE=(By.XPATH,"/html/body/div/div/div[3]/div/div/div/div[2]/div/div/div/div[3]/a")#Отпраить кведомления
